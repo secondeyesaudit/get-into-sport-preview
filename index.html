@@ -91,7 +91,13 @@
   --paper: #F3EEE2; --paper-2: #E9E1CE; --paper-line: rgba(13,11,9,0.14); --paper-line-hi: rgba(13,11,9,0.30);
   --bone: #F3EEE2; --bone-dim: rgba(243,238,226,0.62); --bone-dimmer: rgba(243,238,226,0.52);
   --char: #0D0B09; --char-dim: rgba(13,11,9,0.62); --char-dimmer: rgba(13,11,9,0.60);
-  --rust: #C1531F; --rust-hi: #E27339; --pine: #1F4A3C; --pine-hi: #36745D;
+  /* PLACEHOLDER BRAND COLOURS (2026-08-02): blue-green approximation pending the client's real
+     brand-file hex values. --pine/--pine-hi were already blue-green and are untouched; --rust/
+     --rust-hi were orange and have been re-hued to a complementary blue-green so the whole accent
+     system reads as one blue-green family. One-line swap later: replace these 4 hex values (and
+     the two matching rgba(27,110,90,...) glow copies in .hero::before / .cta-left::before) with
+     the client's confirmed palette. */
+  --rust: #1B6E5A; --rust-hi: #33B092; --pine: #1F4A3C; --pine-hi: #36745D;
   --focus-ring: var(--rust-hi);
   --serif: 'Fraunces', serif; --sans: 'Inter', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
 }
@@ -156,7 +162,7 @@ a{ color:inherit; text-decoration:none; }
 .hero-bg{ position:absolute; inset:0; z-index:0; }
 .hero-bg img, .hero-bg video{ width:100%; height:100%; object-fit:cover; filter:saturate(0.92) contrast(1.05); }
 .hero-bg::after{ content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(13,11,9,0.96) 0%, rgba(13,11,9,0.55) 42%, rgba(13,11,9,0.35) 100%); }
-.hero::before{ content:''; position:absolute; width:70vw; height:70vw; max-width:900px; max-height:900px; border-radius:50%; top:-20%; right:-15%; background:radial-gradient(circle, rgba(193,83,31,0.16) 0%, transparent 65%); filter:blur(10px); z-index:0; }
+.hero::before{ content:''; position:absolute; width:70vw; height:70vw; max-width:900px; max-height:900px; border-radius:50%; top:-20%; right:-15%; background:radial-gradient(circle, rgba(27,110,90,0.16) 0%, transparent 65%); filter:blur(10px); z-index:0; }
 .hero-index{ font-family:var(--mono); font-size:0.76rem; letter-spacing:0.14em; color:var(--bone-dim); margin-bottom:36px; position:relative; z-index:2; display:flex; align-items:center; gap:14px; }
 .hero-index::before{ content:''; width:36px; height:1px; background:var(--ink-line-hi); }
 .hero-title{ font-family:var(--serif); font-weight:340; line-height:0.92; letter-spacing:-0.03em; position:relative; z-index:2; }
@@ -288,7 +294,7 @@ a{ color:inherit; text-decoration:none; }
 /* CTA SPLIT */
 .cta-split{ display:grid; grid-template-columns:1.2fr 1fr; min-height:640px; }
 .cta-left{ background:var(--ink); color:var(--bone); padding:100px 64px; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden; }
-.cta-left::before{ content:''; position:absolute; width:50vw; height:50vw; max-width:600px; max-height:600px; border-radius:50%; bottom:-30%; left:-20%; background:radial-gradient(circle, rgba(193,83,31,0.22), transparent 65%); }
+.cta-left::before{ content:''; position:absolute; width:50vw; height:50vw; max-width:600px; max-height:600px; border-radius:50%; bottom:-30%; left:-20%; background:radial-gradient(circle, rgba(27,110,90,0.22), transparent 65%); }
 .cta-left h2{ font-family:var(--serif); font-weight:340; font-size:clamp(2.2rem,4.6vw,3.8rem); line-height:1.05; letter-spacing:-0.02em; margin-bottom:40px; position:relative; z-index:1; }
 .cta-pills{ display:flex; flex-direction:column; gap:14px; position:relative; z-index:1; max-width:320px; }
 .cta-pill{ border:1px solid var(--ink-line-hi); border-radius:999px; padding:17px 26px; display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:0.82rem; letter-spacing:0.04em; text-transform:uppercase; transition:background 0.25s, border-color 0.25s, transform 0.25s; }
@@ -424,7 +430,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
 <div class="corner-mark corner-tl">
-  <img src="assets/img/img-968df70f3a.png" alt="Get Into Sport logo" class="official-logo">
+  <a href="#home" data-page="home" aria-label="Get Into Sport — home"><img src="assets/img/img-968df70f3a.png" alt="Get Into Sport logo" class="official-logo"></a>
 </div>
 <div class="menu-scrim" aria-hidden="true"></div>
 <button class="menu-btn" id="menuOpenBtn">Menu</button>
@@ -438,10 +444,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <div class="overlay-menu" id="overlayMenu">
   <button class="overlay-close" id="menuCloseBtn">✕</button>
   <div class="overlay-links">
-    <a href="#home" data-page="home"><span>01</span> Home</a>
-    <a href="#camps" data-page="camps"><span>02</span> Holiday camps</a>
-    <a href="#lettings" data-page="lettings"><span>03</span> Facility lettings</a>
-    <a href="#home" data-page="home" data-scroll="contact"><span>04</span> Contact</a>
+    <a href="#lettings" data-page="lettings"><span>01</span> Facility Bookings &mdash; Valley Leadership Academy</a>
+    <a href="#camps" data-page="camps"><span>02</span> Holiday Camps</a>
+    <a href="#contact" data-page="contact"><span>03</span> Contact Us</a>
   </div>
   <div class="overlay-foot">
     <span>Rossendale, Lancashire</span>
@@ -454,6 +459,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <div id="main-content" tabindex="-1"></div>
 <div class="page active" id="page-home">
 
+  <!-- HOMEPAGE — kept deliberately minimal per 2026-08-02 client demo feedback: wordmark,
+       scroll indicator, exactly three single-tier CTAs, nothing else. The content that used to
+       live here (facilities index, coaches/team wall, testimonials, contact form) has moved to
+       the Camps/Lettings/Contact pages, not been deleted — see CHANGELOG.md for the full list. -->
   <section class="hero">
     <div class="hero-bg"><video id="heroVideo" autoplay muted loop playsinline poster="assets/img/img-dbfbbe112e.jpg"><source src="assets/gis-hero-video.mp4" type="video/mp4"></video></div>
     <button type="button" class="video-pause" id="heroVideoPause" aria-label="Pause background video">&#10074;&#10074;</button>
@@ -464,170 +473,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <span class="l2">sport.</span>
       </h1>
       <div class="hero-sub">
-        <div class="hero-cta-block" style="margin-right:auto; display:flex; flex-direction:column; align-items:flex-start; gap:14px; max-width:340px;">
-          <div class="badge-line">DBS-checked coaches &middot; 5.0&#9733; from real parent reviews</div>
-          <a href="#home" data-page="home" data-scroll="contact" class="cta-pill" style="width:100%;">Enquire about camps or lettings &rarr;</a>
-          <div style="font-family:var(--mono); font-size:0.72rem; color:var(--bone-dimmer);">Or call <a href="tel:07308155200" style="color:var(--bone);">07308&nbsp;155200</a></div>
+        <div class="hero-cta-block" style="margin-right:auto; display:flex; flex-direction:column; align-items:flex-start; gap:14px; max-width:380px;">
+          <a href="#lettings" data-page="lettings" class="cta-pill" style="width:100%;">Facility Bookings — Valley Leadership Academy &rarr;</a>
+          <a href="#camps" data-page="camps" class="cta-pill" style="width:100%;">Holiday Camps &rarr;</a>
+          <a href="#contact" data-page="contact" class="cta-pill" style="width:100%;">Contact Us / Inquire &rarr;</a>
         </div>
         <div class="scroll-cue"><span>Scroll</span><div class="line"></div></div>
       </div>
     </div>
   </section>
+</div>
 
-  <section class="index-section">
-    <div class="wrap">
-      <div class="index-head reveal">
-        <div class="eyebrow">What we run</div>
-        <h2>Coaches who know the venues — because they run them.</h2>
-      </div>
-
-      <div class="featured-quote reveal" style="border-left:3px solid var(--rust); padding:4px 0 4px 24px; margin-bottom:60px; max-width:600px;">
-        <p style="font-family:var(--serif); font-style:italic; font-size:1.15rem; line-height:1.5; color:var(--char); margin-bottom:10px;">&ldquo;Amazing holiday camp, literally something for everyone&hellip; the coaches are great and trustworthy and great at communicating.&rdquo;</p>
-        <span style="font-family:var(--mono); font-size:0.74rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--char-dim);">&mdash; Cee Bee, Facebook review &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      </div>
-
-      <a href="#camps" data-page="camps" class="toc-row reveal camps">
-        <span class="toc-num">01</span>
-        <span><span class="toc-title">Holiday camps</span><span class="toc-tag">Ages 5–12 · Book now</span></span>
-        <span class="toc-thumb"><img src="assets/img/img-d4c729fe47.jpg" alt="Children taking part in a Get Into Sport holiday camp session" loading="lazy"></span>
-      </a>
-      <a href="#lettings" data-page="lettings" class="toc-row reveal lettings">
-        <span class="toc-num">02</span>
-        <span><span class="toc-title">Facility lettings</span><span class="toc-tag">7 spaces · From September</span></span>
-        <span class="toc-thumb"><img src="assets/img/img-0051db94d3.jpg" alt="Get Into Sport facility available for community hire" loading="lazy"></span>
-      </a>
-    </div>
-  </section>
-
-  <section class="spotlight">
-    <div class="spotlight-grid">
-      <div class="spotlight-img reveal-l">
-        <img src="assets/img/img-dbfbbe112e.jpg" alt="Get Into Sport coach leading a holiday camp activity" loading="lazy">
-      </div>
-      <div class="spotlight-text reveal-r">
-        <div class="spotlight-text-inner">
-          <div class="eyebrow">Holiday camps</div>
-          <h3>Six weeks of summer, sorted for parents.</h3>
-          <p>Multi-sport camps, DBS-checked coaches, every ability welcome.</p>
-          <div class="stat-line">
-            <div><b>5–12</b><span>Age range</span></div>
-            <div><b>8–5</b><span>Drop-off to pick-up</span></div>
-            <div><b>6 wks</b><span>Summer coverage</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="manifesto">
-    <div class="wrap manifesto-inner reveal">
-      <p><b>DBS checked.</b> First aid trained. Safeguarding compliant. Every coach, every session.</p>
-      <div class="manifesto-attr">— Get Into Sport, Rossendale</div>
-    </div>
-  </section>
-
-  <div class="image-break reveal">
-    <img src="assets/img/img-0051db94d3.jpg" alt="Get Into Sport facility available for community hire" loading="lazy">
-    <span class="cap">The facilities</span>
-  </div>
-
-  <section class="blueprint">
-    <div class="wrap">
-      <div class="blueprint-head reveal">
-        <div>
-          <div class="eyebrow">Facility lettings</div>
-          <h2>Seven spaces, from September.</h2>
-        </div>
-        <div class="blueprint-count">07 / 07<br>Available</div>
-      </div>
-      <div id="facList">
-        <div class="fac-row reveal" data-i="01" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">01</span><span class="fac-name">Trampoline hall</span><span class="fac-plus">+</span><div class="fac-desc"><p>Trampolining sessions and coaching.</p></div></div>
-        <div class="fac-row reveal" data-i="02" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">02</span><span class="fac-name">Art theatre</span><span class="fac-plus">+</span><div class="fac-desc"><p>Performance and community events.</p></div></div>
-        <div class="fac-row reveal" data-i="03" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">03</span><span class="fac-name">Classrooms</span><span class="fac-plus">+</span><div class="fac-desc"><p>Clubs, meetings, community groups.</p></div></div>
-        <div class="fac-row reveal" data-i="04" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">04</span><span class="fac-name">Sports hall</span><span class="fac-plus">+</span><div class="fac-desc"><p>Indoor training and five-a-side.</p></div></div>
-        <div class="fac-row reveal" data-i="05" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">05</span><span class="fac-name">3G football pitch</span><span class="fac-plus">+</span><div class="fac-desc"><p>Full-size, for training and matches.</p></div></div>
-        <div class="fac-row reveal" data-i="06" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">06</span><span class="fac-name">Sand-based astro</span><span class="fac-plus">+</span><div class="fac-desc"><p>Suited to hockey, smaller-sided games.</p></div></div>
-        <div class="fac-row reveal" data-i="07" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">07</span><span class="fac-name">Grass pitches</span><span class="fac-plus">+</span><div class="fac-desc"><p>Football, rugby, team training.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="image-break reveal">
-    <img src="assets/img/img-d4c729fe47.jpg" alt="Children taking part in a Get Into Sport holiday camp session" loading="lazy">
-    <span class="cap">On site, every holiday</span>
-  </div>
-
-  <section class="team-section">
-    <div class="wrap">
-      <div class="team-head reveal">
-        <div class="eyebrow">The people behind it</div>
-        <h2>One local team, on both sides of the gate.</h2>
-      </div>
-      <div class="team-wall reveal">
-        <div class="team-slot"><div class="team-placeholder"><span class="initial">SD</span><span class="pending">Photo pending</span></div><div class="team-cap"><b>Sam Dawson</b><span>Director &amp; DSL</span></div></div>
-        <div class="team-slot"><div class="team-placeholder"><span class="initial">SM</span><span class="pending">Photo pending</span></div><div class="team-cap"><b>Simon Mayoh</b><span>Director &amp; Coach</span></div></div>
-        <div class="team-slot"><div class="team-placeholder"><span class="initial">PC</span><span class="pending">Photo pending</span></div><div class="team-cap"><b>Patrick Crawshaw</b><span>Director &amp; Coach</span></div></div>
-        <div class="team-slot"><div class="team-placeholder"><span class="initial">NB</span><span class="pending">Photo pending</span></div><div class="team-cap"><b>Nathan Bibby</b><span>Director &amp; Coach</span></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="photo-carousel">
-    <div class="wrap">
-      <div class="carousel-head reveal">
-        <div>
-          <div class="eyebrow">On site</div>
-          <h2 style="font-family:var(--serif); font-size:clamp(1.6rem,3vw,2.4rem);">A summer of sessions.</h2>
-        </div>
-        <div class="carousel-nav"><button type="button" class="carousel-pause" aria-label="Pause photo carousel">&#10074;&#10074;</button></div>
-        </div>
-      <div class="carousel-track"><div class="carousel-row">
-        <div class="carousel-item ci-01" role="img" aria-label="Colour run finish, summer camp"></div>
-        <div class="carousel-item ci-03" role="img" aria-label="Young goalkeepers, star player wall"></div>
-        <div class="carousel-item ci-06" role="img" aria-label="Camper by the Get Into Sport banner"></div>
-        <div class="carousel-item ci-07" role="img" aria-label="Trampolining session"></div>
-        <div class="carousel-item ci-09" role="img" aria-label="Cooking activity, decorating pizzas"></div>
-        <div class="carousel-item ci-12" role="img" aria-label="Campers relaxing pitch-side"></div>
-        <div class="carousel-item ci-13" role="img" aria-label="Badminton in the sports hall"></div>
-        <div class="carousel-item ci-14" role="img" aria-label="Trampoline hall session"></div>
-        <div class="carousel-item ci-17" role="img" aria-label="Every ability welcome, camper with mobility aid"></div>
-        <div class="carousel-item ci-18" role="img" aria-label="Camper with a trophy"></div>
-        <div class="carousel-item ci-01" role="img" aria-label="Colour run finish, summer camp"></div>
-        <div class="carousel-item ci-03" role="img" aria-label="Young goalkeepers, star player wall"></div>
-        <div class="carousel-item ci-06" role="img" aria-label="Camper by the Get Into Sport banner"></div>
-        <div class="carousel-item ci-07" role="img" aria-label="Trampolining session"></div>
-        <div class="carousel-item ci-09" role="img" aria-label="Cooking activity, decorating pizzas"></div>
-        <div class="carousel-item ci-12" role="img" aria-label="Campers relaxing pitch-side"></div>
-        <div class="carousel-item ci-13" role="img" aria-label="Badminton in the sports hall"></div>
-        <div class="carousel-item ci-14" role="img" aria-label="Trampoline hall session"></div>
-        <div class="carousel-item ci-17" role="img" aria-label="Every ability welcome, camper with mobility aid"></div>
-        <div class="carousel-item ci-18" role="img" aria-label="Camper with a trophy"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="quote-section">
-    <div class="wrap">
-      <div class="eyebrow reveal">What people say</div>
-      <div class="quote-mark reveal">"</div>
-      <div class="quote-stack reveal">
-        <div class="quote-slide active"><p>Amazing holiday camp, literally something for everyone.. the best around! It's nice to see how happy my children come home after a day at camp and tell me about all the sports and activities they have been able to do, the coaches are great and trustworthy and great at communicating.. highly recommend</p><footer>Cee Bee, Facebook review</footer></div>
-        <div class="quote-slide"><p>Absolutely amazing club. My 7 year old thinks it's marvellous and loves coming. The staff are fantastic and there are so many activities to keep him and everyone entertained all day — he can't wait till October half term to come back.</p><footer>Charlotte Whitehead, Facebook review</footer></div>
-        <div class="quote-slide"><p>We were panicking when we first booked as my little girl really struggles when going to new places, however on the first day she came home full of smiles and has continued to love it. Also one of the best cost effective clubs within the area!</p><footer>Melissa Phillipson, Facebook review</footer></div>
-        <div class="quote-slide"><p>Thank you to all the amazing coaches at holiday club this summer! Matilda loved every minute! All the activities were varied and brilliantly organised... pizza making, climbing, dance... the list goes on. Great value for money too!</p><footer>Laura Colam, Facebook review</footer></div>
-        <div class="quote-slide"><p>Even when we went abroad on holiday, my son was asking if he could go to footy camp the day we got back! All the staff are amazing and there is so much variety. If you're stuck for childcare in the school holidays, I'd definitely recommend GIS.</p><footer>Michelle Clawson, Facebook review</footer></div>
-        <div class="quote-slide"><p>I have a 9 year old boy who gets overwhelmed going to new places where he doesn't know anyone, but this group have helped him settle in really quickly! The activities are fantastic and inclusive for everyone — amazing holiday club without being ridiculously expensive.</p><footer>Paula Dawson, Facebook review</footer></div>
-        <div class="quote-slide"><p>My two haven't missed a holiday club yet and it's always their favourite part about half term! The new additions like glow in the dark dodgeball and trampolining have been an absolute hit. Paddy and the team are so accommodating and fab at what they do.</p><footer>Lizzie Wright, Facebook review</footer></div>
-        <div class="quote-slide"><p>Thank you to all the amazing staff for all their hard work keeping our grandson thoroughly engaged and happy throughout the summer. He loved all the activities and can't wait for October — would highly recommend 100%.</p><footer>Jean Hardman, Facebook review</footer></div>
-      </div>
-      <div class="quote-dots">
-        <button class="active" data-q="0" aria-label="Show testimonial 1 of 8" aria-current="true"></button><button data-q="1" aria-label="Show testimonial 2 of 8" aria-current="false"></button><button data-q="2" aria-label="Show testimonial 3 of 8" aria-current="false"></button><button data-q="3" aria-label="Show testimonial 4 of 8" aria-current="false"></button><button data-q="4" aria-label="Show testimonial 5 of 8" aria-current="false"></button><button data-q="5" aria-label="Show testimonial 6 of 8" aria-current="false"></button><button data-q="6" aria-label="Show testimonial 7 of 8" aria-current="false"></button><button data-q="7" aria-label="Show testimonial 8 of 8" aria-current="false"></button>
-      </div>
-      <a href="https://www.facebook.com/profile.php?id=61575676906139" target="_blank" rel="noopener" style="display:block; margin-top:32px; font-family:var(--mono); font-size:0.74rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--char-dim);">See all our reviews on Facebook &rarr;</a>
-    </div>
-  </section>
-
-  <section id="contact">
+<!-- ============ CONTACT ============ -->
+<div class="page" id="page-contact">
+  <section id="contact" style="padding-top:140px;">
     <div class="cta-split">
       <div class="cta-left reveal-l">
         <h2>Two ways in.<br>One conversation.</h2>
@@ -662,6 +521,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     <div class="strand-img"><img src="assets/img/img-dbfbbe112e.jpg" alt="Get Into Sport coach leading a holiday camp activity" loading="lazy"></div>
   </section>
 
+  <!-- ABOUT US -->
+  <section class="spotlight">
+    <div class="spotlight-grid">
+      <div class="spotlight-img reveal-l">
+        <img src="assets/img/img-dbfbbe112e.jpg" alt="Get Into Sport coach leading a holiday camp activity" loading="lazy">
+      </div>
+      <div class="spotlight-text reveal-r">
+        <div class="spotlight-text-inner">
+          <div class="eyebrow">About us</div>
+          <h3>Six weeks of summer, sorted for parents.</h3>
+          <p>Multi-sport camps, DBS-checked coaches, every ability welcome. DBS checked, first aid trained, safeguarding compliant — every coach, every session.</p>
+          <div class="stat-line">
+            <div><b>5–12</b><span>Age range</span></div>
+            <div><b>8–5</b><span>Drop-off to pick-up</span></div>
+            <div><b>6 wks</b><span>Summer coverage</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="wrap">
     <div class="editorial-stats reveal">
       <div><b>Full week</b><span>Mon–Fri, 8:30–4:30. Most popular.</span></div>
@@ -674,6 +554,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     <img src="assets/img/img-d4c729fe47.jpg" alt="Children taking part in a Get Into Sport holiday camp session" loading="lazy">
     <span class="cap">Six weeks, every summer</span>
   </div>
+
+  <!-- COACHES LIST -->
+  <section class="team-section">
+    <div class="wrap">
+      <div class="team-head reveal">
+        <div class="eyebrow">Coaches</div>
+        <h2>The coaches on site every session.</h2>
+      </div>
+      <div class="team-wall reveal">
+        <div class="team-slot"><div class="team-placeholder"><span class="initial">SD</span><span class="pending">Photo pending</span></div><div class="team-cap"><b>Sam Dawson</b><span>Director &amp; DSL</span></div></div>
+        <div class="team-slot"><div class="team-placeholder"><span class="initial">SM</span><span class="pending">Photo pending</span></div><div class="team-cap"><b>Simon Mayoh</b><span>Director &amp; Coach</span></div></div>
+        <div class="team-slot"><div class="team-placeholder"><span class="initial">PC</span><span class="pending">Photo pending</span></div><div class="team-cap"><b>Patrick Crawshaw</b><span>Director &amp; Coach</span></div></div>
+        <div class="team-slot"><div class="team-placeholder"><span class="initial">NB</span><span class="pending">Photo pending</span></div><div class="team-cap"><b>Nathan Bibby</b><span>Director &amp; Coach</span></div></div>
+      </div>
+    </div>
+  </section>
 
   <section class="photo-carousel">
     <div class="wrap">
@@ -703,11 +599,40 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     </div>
   </section>
 
+  <!-- REVIEWS -->
+  <section class="quote-section">
+    <div class="wrap">
+      <div class="eyebrow reveal">Reviews</div>
+      <div class="quote-mark reveal">"</div>
+      <div class="quote-stack reveal">
+        <div class="quote-slide active"><p>Amazing holiday camp, literally something for everyone.. the best around! It's nice to see how happy my children come home after a day at camp and tell me about all the sports and activities they have been able to do, the coaches are great and trustworthy and great at communicating.. highly recommend</p><footer>Cee Bee, Facebook review</footer></div>
+        <div class="quote-slide"><p>Absolutely amazing club. My 7 year old thinks it's marvellous and loves coming. The staff are fantastic and there are so many activities to keep him and everyone entertained all day — he can't wait till October half term to come back.</p><footer>Charlotte Whitehead, Facebook review</footer></div>
+        <div class="quote-slide"><p>We were panicking when we first booked as my little girl really struggles when going to new places, however on the first day she came home full of smiles and has continued to love it. Also one of the best cost effective clubs within the area!</p><footer>Melissa Phillipson, Facebook review</footer></div>
+        <div class="quote-slide"><p>Thank you to all the amazing coaches at holiday club this summer! Matilda loved every minute! All the activities were varied and brilliantly organised... pizza making, climbing, dance... the list goes on. Great value for money too!</p><footer>Laura Colam, Facebook review</footer></div>
+        <div class="quote-slide"><p>Even when we went abroad on holiday, my son was asking if he could go to footy camp the day we got back! All the staff are amazing and there is so much variety. If you're stuck for childcare in the school holidays, I'd definitely recommend GIS.</p><footer>Michelle Clawson, Facebook review</footer></div>
+        <div class="quote-slide"><p>I have a 9 year old boy who gets overwhelmed going to new places where he doesn't know anyone, but this group have helped him settle in really quickly! The activities are fantastic and inclusive for everyone — amazing holiday club without being ridiculously expensive.</p><footer>Paula Dawson, Facebook review</footer></div>
+        <div class="quote-slide"><p>My two haven't missed a holiday club yet and it's always their favourite part about half term! The new additions like glow in the dark dodgeball and trampolining have been an absolute hit. Paddy and the team are so accommodating and fab at what they do.</p><footer>Lizzie Wright, Facebook review</footer></div>
+        <div class="quote-slide"><p>Thank you to all the amazing staff for all their hard work keeping our grandson thoroughly engaged and happy throughout the summer. He loved all the activities and can't wait for October — would highly recommend 100%.</p><footer>Jean Hardman, Facebook review</footer></div>
+      </div>
+      <div class="quote-dots">
+        <button class="active" data-q="0" aria-label="Show testimonial 1 of 8" aria-current="true"></button><button data-q="1" aria-label="Show testimonial 2 of 8" aria-current="false"></button><button data-q="2" aria-label="Show testimonial 3 of 8" aria-current="false"></button><button data-q="3" aria-label="Show testimonial 4 of 8" aria-current="false"></button><button data-q="4" aria-label="Show testimonial 5 of 8" aria-current="false"></button><button data-q="5" aria-label="Show testimonial 6 of 8" aria-current="false"></button><button data-q="6" aria-label="Show testimonial 7 of 8" aria-current="false"></button><button data-q="7" aria-label="Show testimonial 8 of 8" aria-current="false"></button>
+      </div>
+      <a href="https://www.facebook.com/profile.php?id=61575676906139" target="_blank" rel="noopener" style="display:block; margin-top:32px; font-family:var(--mono); font-size:0.74rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--char-dim);">See all our reviews on Facebook &rarr;</a>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
   <div class="wrap">
     <div class="book-panel reveal">
-      <div><h3>Ready to book?</h3><p>Booked and paid through our camps partner. Online booking is launching soon &mdash; enquire below in the meantime and the team will confirm your dates directly.</p>
-      <div style="max-width:320px; margin-top:20px;"><a href="#home" data-page="home" data-scroll="contact" class="cta-pill" style="width:100%;">Enquire about camp dates &rarr;</a></div></div>
-      <div class="embed-slot">Online booking &mdash; launching soon</div>
+      <div>
+        <h3>Ready to book?</h3>
+        <p>Camp booking and payment is handled through our booking partner, ClassForKids. You'll be taken to their site to choose dates and pay securely.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:flex-start; gap:12px; min-width:260px;">
+        <!-- PLACEHOLDER: real ClassForKids booking URL to be added once supplied by the client — swap the href below. -->
+        <a href="#" target="_blank" rel="noopener" class="cta-pill" style="width:100%; background:var(--rust-hi); color:var(--ink); border-color:var(--rust-hi);">Book Now on ClassForKids &rarr;</a>
+        <span style="font-family:var(--mono); font-size:0.68rem; color:var(--bone-dimmer);">Placeholder link — real ClassForKids booking URL pending.</span>
+      </div>
     </div>
   </div>
 </div>
@@ -716,11 +641,28 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <div class="page" id="page-lettings">
   <section class="strand-open lettings">
     <div class="strand-open-inner reveal">
-      <div class="strand-eyebrow">Facility lettings</div>
+      <div class="strand-eyebrow">Facility lettings &middot; Valley Leadership Academy</div>
       <h2 class="strand-title"><span class="big">School facilities,</span><span class="big accent">open to the community.</span></h2>
       <p class="lede">Halls, pitches and classrooms, outside school hours.</p>
+      <div style="margin-top:34px;"><a href="#bookteq-widget" class="cta-pill" style="width:auto; display:inline-flex;">Book Now &rarr;</a></div>
     </div>
     <div class="strand-img"><img src="assets/img/img-0051db94d3.jpg" alt="Get Into Sport facility available for community hire" loading="lazy"></div>
+  </section>
+
+  <!-- BOOK NOW -- Bookteq live calendar widget -->
+  <section class="venue-strip" id="bookteq-widget">
+    <div class="wrap">
+      <div class="badge-line">Live calendar</div>
+      <h3 style="font-family:var(--serif); font-weight:400; font-size:clamp(1.6rem,3vw,2.2rem); margin-bottom:24px; max-width:600px;">Book Valley Leadership Academy facilities</h3>
+      <!-- PLACEHOLDER: Bookteq calendar widget embed.
+           Replace the .embed-slot div below with the real widget snippet from the client's
+           Bookteq account dashboard (Settings -> Website Widget) once that account is confirmed
+           live -- see CANONICAL_FACTS.md, "Booking system", for status. Install reference:
+           https://help.bookteq.com/client-support-hub/installing-a-booking-calendar-widget-on-your-website
+           Typical pattern is a container div plus an async loader script tag; the exact markup
+           has to come from the client's own Bookteq account, not guessed here. -->
+      <div class="embed-slot" style="min-width:100%; padding:60px 34px;">Bookteq live calendar &mdash; embed pending Bookteq account confirmation</div>
+    </div>
   </section>
 
   <div class="wrap" style="padding-top:110px;">
@@ -734,6 +676,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       <div class="fac-row reveal" data-i="07" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">07</span><span class="fac-name">Grass pitches</span><span class="fac-plus">+</span><div class="fac-desc"><p>Football, rugby, team training.</p></div></div>
     </div>
   </div>
+
+  <!-- ABOUT US / WHAT TO EXPECT -->
+  <section class="index-section" style="padding:120px 0;">
+    <div class="wrap">
+      <div class="index-head reveal">
+        <div class="eyebrow">About Valley Leadership Academy</div>
+        <h2>What to expect when you hire with us.</h2>
+      </div>
+      <div class="reveal" style="max-width:640px;">
+        <p style="color:var(--char-dim); font-size:1.02rem; line-height:1.72; margin-bottom:24px;">Get Into Sport runs facility lettings at Valley Leadership Academy in Rossendale, Lancashire &mdash; the same local team behind our holiday camps. Seven spaces are available outside school hours, from the trampoline hall to full-size grass pitches, for clubs, schools and community groups.</p>
+        <span class="toc-tag" style="display:inline-block; border:1px dashed var(--paper-line-hi); padding:8px 14px; border-radius:999px;">Placeholder copy &mdash; full "what to expect" details (access, parking, changing facilities) pending final content from the client.</span>
+      </div>
+    </div>
+  </section>
 
   <div class="image-break reveal">
     <img src="assets/img/img-dbfbbe112e.jpg" alt="Get Into Sport coach working with campers" loading="lazy">
@@ -793,26 +749,32 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     <div class="foot-top">
       <div class="foot-col">
         <h3>Explore</h3>
-        <a href="#camps" data-page="camps">Holiday camps</a>
-        <a href="#lettings" data-page="lettings">Facility lettings</a>
-        <a href="#home" data-page="home" data-scroll="contact">Contact</a>
+        <a href="#lettings" data-page="lettings">Facility Bookings &mdash; Valley Leadership Academy</a>
+        <a href="#camps" data-page="camps">Holiday Camps</a>
+        <a href="#contact" data-page="contact">Contact Us</a>
       </div>
       <div class="foot-col">
         <h3>Direct</h3>
         <a href="mailto:getintokeepingsam@gmail.com">getintokeepingsam@gmail.com</a>
         <a href="tel:07308155200">07308&nbsp;155200</a>
+        <a href="https://wa.me/447308155200" target="_blank" rel="noopener">WhatsApp</a>
       </div>
       <div class="foot-col">
         <h3>Find us</h3>
         <a href="#">Rossendale, Lancashire</a>
         <a href="https://www.facebook.com/profile.php?id=61575676906139" target="_blank" rel="noopener">Facebook</a>
       </div>
+      <div class="foot-col">
+        <h3>Legal</h3>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span style="display:block; font-size:0.82rem; color:var(--bone-dimmer); line-height:1.5; margin-top:2px;">Registered office: 14 Towneley Road, Longridge, Lancashire, PR3&nbsp;3HU</span>
+      </div>
     </div>
     <div class="ghost-word">GET INTO SPORT</div>
     <div class="foot-bottom">
-      <span>© 2026 Get Into Sport</span>
+      <span>&copy; 2026 Get Into Sport Ltd</span>
       <span>Holiday camps &amp; facility lettings</span>
-      <span>Get Into Sport Ltd &middot; Company No. 16398749</span>
+      <span>Company No. 16398749</span>
     </div>
   </div>
 </footer>
@@ -868,12 +830,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   var PAGE_TITLES = {
     home: 'Get Into Sport — Holiday Camps & Facility Lettings',
     camps: 'Holiday Camps, Ages 5–12 | Get Into Sport',
-    lettings: 'Facility Lettings, Rossendale | Get Into Sport'
+    lettings: 'Facility Lettings, Rossendale | Get Into Sport',
+    contact: 'Contact Us | Get Into Sport'
   };
   var WA_TEXT = {
     home: "Hi, I'd like to find out more about Get Into Sport",
     camps: "Hi, I'd like to find out about booking a holiday camp place",
-    lettings: "Hi, I'd like to enquire about hiring a facility"
+    lettings: "Hi, I'd like to enquire about hiring a facility",
+    contact: "Hi, I'd like to get in touch about Get Into Sport"
   };
   function showPage(name, opts){
     opts = opts || {};

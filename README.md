@@ -7,8 +7,12 @@ Pages, or ordinary FTP hosting) and it will work as-is.
 
 ## Files
 
-- `index.html` — the whole site (Home, Camps, Lettings — one file, switched by
-  JavaScript, see "Known architecture limitation" below).
+- `index.html` — the whole site (Home, Contact, Camps, Lettings — one file,
+  switched by JavaScript, see "Known architecture limitation" below).
+- `privacy-policy.html` — a **draft placeholder** privacy policy, added
+  2026-08-02 so the footer's Privacy Policy link resolves to something. It is
+  clearly marked as a draft on the page itself and is not a real, legally
+  sufficient policy — see "What still doesn't work" below.
 - `assets/img/` — 20 real image files, extracted and deduplicated from the
   original demo build (see "Where this came from").
 - `assets/gis-hero-video.mp4` — the hero background video.
@@ -39,8 +43,8 @@ one to a file, and replace the data URI with a relative path).
 
 ## Known architecture limitation
 
-This is a single HTML page with three sections shown/hidden by JavaScript —
-there are no real separate URLs for `/camps` or `/lettings`. This was flagged
+This is a single HTML page with four sections shown/hidden by JavaScript —
+there are no real separate URLs for `/camps`, `/lettings` or `/contact`. This was flagged
 as a launch blocker in the original QA review: search engines can only index
 one page, and the whole page's content ships on every load. It works, and it
 looks right, but it isn't how a site this size should be built long-term. If
@@ -69,12 +73,32 @@ there — just the IDs.
 1. **Both enquiry forms don't send data anywhere.** They show a success
    message but the data goes nowhere. Needs a real destination (email, CRM,
    or a form-handling service) before launch.
-2. **Both booking sections are placeholders** ("Online booking — launching
-   soon"). Needs the real Class For Kids / Bookteq embed once those accounts
-   are live.
-3. **No privacy policy exists.** Required by UK GDPR the moment any form
-   collects personal data, and before GA4/Clarity go live for real.
+2. **Booking is still not wired to a live provider.** The Camps page now has
+   a branded "Book Now on ClassForKids" button and the Lettings page has a
+   "Book Now" CTA leading to a Bookteq widget slot, but both point at
+   placeholders (`href="#"` on Camps, an empty `.embed-slot` on Lettings) —
+   see the `PLACEHOLDER:` comments next to each in `index.html`. Needs the
+   real ClassForKids URL and the real Bookteq widget embed code once those
+   accounts are confirmed live.
+3. **The privacy policy is a draft placeholder, not a real one.** See
+   `privacy-policy.html` — it's clearly marked as a draft on the page itself.
+   Required by UK GDPR the moment any form collects personal data, and before
+   GA4/Clarity go live for real.
 
 Full detail on all of the above, plus everything else reviewed this session
 (SEO, conversion, accessibility, and a full pre-launch checklist), is in the
 `QA/` folder one level up from `build/` and `build-production/`.
+
+## 2026-08-02 — client demo feedback build
+
+Targeted build against confirmed feedback from a client demo walkthrough (see
+`08_Meetings/2026-08-02 Client Demo Feedback.md` in the Second Eyes OS client
+folder for the full brief). Summary: homepage reduced to hero + 3 CTAs only;
+a new Contact page was split out to hold the enquiry form that used to live
+on the homepage; the Camps page was restructured to About Us → Coaches →
+Reviews → Booking; the Lettings page gained a top-of-page Book Now CTA and a
+Bookteq widget placeholder plus an About Us / what-to-expect section; the
+accent colour (`--rust`/`--rust-hi`) was re-hued from orange to a blue-green
+placeholder pending real brand hex values; the footer gained a Legal column
+with a Privacy Policy link and registered office details. Full change list in
+the Second Eyes OS client folder's `00_Dashboard/CHANGELOG.md`.
