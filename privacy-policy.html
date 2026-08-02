@@ -4,62 +4,151 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0D0B09">
-<title>Privacy Policy (Draft) — Get Into Sport</title>
-<meta name="robots" content="noindex, nofollow">
+<title>Privacy Policy — Get Into Sport</title>
+<meta name="description" content="How Get Into Sport Ltd handles personal information on this website.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://getintosportltd.com/privacy-policy.html">
 <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16.png">
+<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
-  :root{
-    --ink:#0D0B09; --paper:#F3EEE2; --char:#0D0B09; --char-dim:rgba(13,11,9,0.62);
-    --pine:#1F4A3C; --rust:#1B6E5A;
-    --serif:'Georgia', serif; --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif; --mono:'Courier New', monospace;
-  }
-  *{ margin:0; padding:0; box-sizing:border-box; }
-  body{ font-family:var(--sans); background:var(--paper); color:var(--char); line-height:1.65; }
-  .wrap{ max-width:760px; margin:0 auto; padding:64px 24px 120px; }
-  a{ color:var(--pine); }
-  h1{ font-family:var(--serif); font-size:2.2rem; margin-bottom:10px; }
-  h2{ font-family:var(--serif); font-size:1.3rem; margin:36px 0 12px; }
-  p, li{ margin-bottom:14px; }
-  ul{ padding-left:22px; }
-  .draft-banner{ background:var(--ink); color:var(--paper); font-family:var(--mono); font-size:0.85rem; padding:16px 20px; border-radius:8px; margin-bottom:40px; border:1px dashed rgba(244,238,227,0.4); }
-  .draft-banner b{ color:var(--rust); }
-  .back-link{ display:inline-block; margin-top:40px; font-family:var(--mono); font-size:0.85rem; }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --ink:#0D0B09; --paper:#F3EEE2; --paper-2:#E9E1CE;
+  --char:#0D0B09; --char-dim:rgba(13,11,9,0.66); --paper-line:rgba(13,11,9,0.14);
+  --accent:#1D9AAC; --accent-active:#0B7FA2; --navy:#263940;
+  --heading:'Poppins', system-ui, sans-serif; --body:'Inter', system-ui, sans-serif;
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ font-family:var(--body); background:var(--paper); color:var(--char); line-height:1.7; -webkit-font-smoothing:antialiased; }
+.wrap{ max-width:760px; margin:0 auto; padding:56px 24px 100px; }
+@media (max-width:600px){ .wrap{ padding:40px 20px 80px; } }
+
+.top-nav{ display:flex; align-items:center; gap:12px; margin-bottom:48px; }
+.top-nav img{ height:36px; width:auto; }
+.top-nav a{ font-family:var(--heading); font-weight:600; font-size:0.82rem; letter-spacing:0.02em; color:var(--navy); text-decoration:none; }
+.top-nav a:hover{ color:var(--accent); }
+
+h1{ font-family:var(--heading); font-weight:600; font-size:clamp(1.9rem,4vw,2.6rem); color:var(--navy); letter-spacing:-0.01em; margin-bottom:10px; }
+.updated{ font-family:var(--body); font-size:0.85rem; color:var(--char-dim); margin-bottom:40px; }
+h2{ font-family:var(--heading); font-weight:600; font-size:1.15rem; color:var(--navy); margin:38px 0 12px; letter-spacing:-0.005em; }
+p, li{ font-size:1rem; margin-bottom:14px; color:var(--char); }
+ul{ padding-left:22px; margin-bottom:14px; }
+li{ margin-bottom:8px; }
+a{ color:var(--accent-active); text-decoration:underline; text-decoration-color:rgba(11,127,162,0.4); }
+a:hover{ color:var(--accent); }
+strong{ font-weight:600; }
+
+.callout{ background:var(--paper-2); border-left:3px solid var(--accent); border-radius:4px; padding:18px 22px; margin:20px 0; }
+.callout p{ margin-bottom:0; font-size:0.96rem; }
+
+.contact-block{ background:var(--paper-2); border-radius:8px; padding:22px 26px; margin:16px 0 20px; }
+.contact-block p{ margin-bottom:6px; }
+.contact-block p:last-child{ margin-bottom:0; }
+
+hr{ border:none; border-top:1px solid var(--paper-line); margin:44px 0; }
+
+footer.legal-footer{ margin-top:56px; padding-top:24px; border-top:1px solid var(--paper-line); font-family:var(--body); font-size:0.82rem; color:var(--char-dim); }
+footer.legal-footer a{ color:var(--char-dim); }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <div class="draft-banner">
-    <b>DRAFT — PLACEHOLDER, NOT A FINAL LEGAL DOCUMENT.</b> This page exists so the site's footer link
-    resolves to something rather than a dead link. It has not been drafted or reviewed by a solicitor,
-    does not yet reflect real data-handling practice (form backend, analytics IDs, retention periods
-    are all still unconfirmed — see CANONICAL_FACTS.md), and must not be treated as legally
-    sufficient. Get Into Sport Ltd should not rely on this page to launch enquiry forms or analytics
-    live under UK GDPR — commission or draft a real privacy policy first, then replace this file.
+  <div class="top-nav">
+    <img src="assets/img/img-968df70f3a.png" alt="Get Into Sport logo">
+    <a href="index.html">&larr; Back to Get Into Sport</a>
   </div>
 
   <h1>Privacy Policy</h1>
-  <p style="font-family:var(--mono); font-size:0.8rem; color:var(--char-dim);">Draft placeholder — last edited 2026-08-02</p>
+  <p class="updated">Last updated: 2 August 2026</p>
 
   <h2>Who we are</h2>
-  <p>Get Into Sport Ltd (company number 16398749), operating in Rossendale, Lancashire. Contact:
-    <a href="mailto:getintokeepingsam@gmail.com">getintokeepingsam@gmail.com</a>.</p>
+  <p><strong>Get Into Sport Ltd</strong> (company number 16398749) is the controller responsible for your personal information in connection with this website. Our registered office is 14 Towneley Road, Longridge, Lancashire, PR3 3HU.</p>
 
-  <h2>What this policy will need to cover</h2>
-  <p>Once real details are confirmed, this policy should set out, in plain language:</p>
+  <div class="contact-block">
+    <p><strong>Contact us about privacy:</strong></p>
+    <p>Email: <a href="mailto:getintokeepingsam@gmail.com">getintokeepingsam@gmail.com</a></p>
+  </div>
+
+  <h2>Scope of this notice</h2>
+  <p>This notice covers the website at <strong>getintosportltd.com</strong> only — how it's built, what happens when you use the enquiry forms on it, and what cookies or similar technology it uses. It does not cover other services you might use to reach us or to book with us, such as WhatsApp, Facebook, or ClassForKids — those each have their own privacy arrangements, which we link to below where relevant.</p>
+
+  <h2>The enquiry forms don't currently send anywhere — please read this first</h2>
+  <div class="callout">
+    <p>This website has two enquiry forms (one for general enquiries, one for facility hire). As things stand, submitting either form does <strong>not</strong> send your information anywhere — there is no working destination (email inbox, CRM, or similar) connected to them yet. If you type something into a form and click submit, it stays in your own browser and is not received by Get Into Sport Ltd or anyone else. If you want to get in touch right now, please use the phone number, WhatsApp link, or email address shown on the site instead.</p>
+  </div>
+  <p>This section describes how the forms are <em>intended</em> to work once a submission destination is connected, and what would apply from that point. We'll update this notice — including naming the specific service used — before that happens.</p>
+
+  <h2>What information the forms ask for</h2>
   <ul>
-    <li>What personal data the two enquiry forms (home/contact and facility lettings) collect, and where that data is actually sent — currently unconfirmed, see the site's outstanding launch blockers.</li>
-    <li>What analytics/cookies are used (Google Analytics 4, Microsoft Clarity) once their real tracking IDs are live, and how the cookie-consent banner on the site relates to them.</li>
-    <li>How long data is kept, who it's shared with (e.g. any CRM or booking partner such as ClassForKids or Bookteq), and how someone can ask to see or delete their data.</li>
-    <li>Contact details for data protection queries, and ICO registration details once/if registration is completed.</li>
+    <li><strong>General enquiry form</strong> (Contact page): your name, email address, and a free-text message.</li>
+    <li><strong>Facility hire enquiry form</strong> (Lettings page): your name, email address, and details of what you're looking to hire and when.</li>
   </ul>
+  <p>Neither form asks for information about a child directly — they're for the parent, guardian, or organisation (such as a school or club) making the enquiry. If your enquiry is about booking a holiday camp place for a child, that booking itself is completed separately on ClassForKids' own website (see below), not through either form on this site.</p>
 
-  <h2>What to do next</h2>
-  <p>Replace this file with a real privacy policy — either drafted with a solicitor or generated from
-    a reputable UK GDPR policy generator and then reviewed — before the enquiry forms or analytics go
-    live for real. This is tracked as a launch blocker.</p>
+  <h2>How we would use this information, and our lawful basis</h2>
+  <p>Once the forms are connected to a real destination, we intend to use the information you submit only to respond to your enquiry:</p>
+  <ul>
+    <li><strong>General enquiries:</strong> we'd rely on <strong>legitimate interests</strong> — replying to a message someone has chosen to send us is a reasonable, expected use of that information, with minimal impact on your privacy, and we wouldn't use it for anything beyond answering your enquiry.</li>
+    <li><strong>Facility hire enquiries:</strong> we'd rely on it being <strong>necessary to take steps at your request before entering into a contract</strong> — you're asking us about hiring a facility, which is a step toward a potential booking agreement.</li>
+  </ul>
+  <p>We would not use enquiry information for marketing, and we do not currently send marketing emails of any kind.</p>
 
-  <a class="back-link" href="index.html">&larr; Back to Get Into Sport</a>
+  <h2>Is providing your information required?</h2>
+  <p>No. Using the enquiry forms is entirely optional — you can also reach us by phone, WhatsApp, or email using the contact details on the site. If you choose not to provide the requested details on a form, we may not be able to respond to that specific enquiry, but there's no obligation to use the forms at all.</p>
+
+  <h2>Who your information may be shared with</h2>
+  <p>We have not yet finalised where enquiry-form submissions will be sent once they're switched on — for example, whether that's a business email inbox or a customer-management system. We'll name the specific service here once that decision is made. We do not currently share enquiry information with any third party, because the forms don't yet transmit it anywhere.</p>
+
+  <h2>External booking and links</h2>
+  <p><strong>Holiday camp bookings</strong> are made directly through our booking partner, ClassForKids, at <a href="https://getintosportltd.classforkids.io/" target="_blank" rel="noopener">getintosportltd.classforkids.io</a>. When you follow that link and use ClassForKids to book, you're interacting with ClassForKids' own website under their own privacy policy and terms — we'd encourage you to review those before booking. Get Into Sport Ltd does not control how ClassForKids processes your information on their platform.</p>
+  <p><strong>Facility hire bookings</strong> are intended to run through a live calendar booking widget (Bookteq), but that widget is <strong>not yet installed</strong> — it has not been activated with a live account, so no facility-hire data is currently being processed through it. This notice will be updated with details of that service before it goes live.</p>
+  <p>This site also links out to our <a href="https://www.facebook.com/profile.php?id=61575676906139" target="_blank" rel="noopener">Facebook page</a> and to <a href="https://wa.me/447308155200" target="_blank" rel="noopener">WhatsApp</a> for direct messaging. Facebook and WhatsApp (both Meta platforms) have their own privacy policies governing anything you share through them directly.</p>
+
+  <h2>International transfers</h2>
+  <p>We do not currently use any service, as part of this website, that transfers your personal data outside the UK. If that changes in future — for example, if we activate Google Analytics (see Cookies below) — we'll update this section to explain what's transferred and the safeguards in place.</p>
+
+  <h2>How long we keep information</h2>
+  <p>We have not yet finalised a formal retention schedule. Our general approach will be to keep enquiry information only for as long as it's needed to respond to your enquiry and deal with any reasonable follow-up, then delete it. We'll publish specific retention periods here once they're confirmed.</p>
+
+  <h2>Security</h2>
+  <p>This website is served over a secure (HTTPS) connection. We take reasonable care over how any information handled through this site is protected, but no method of transmission over the internet can be guaranteed completely secure. As explained above, the enquiry forms don't currently transmit any data at all, so there is nothing collected via those forms to secure at this time. We'll describe our security measures for stored enquiry data here once a submission destination is in place.</p>
+
+  <h2>Cookies and analytics</h2>
+  <p>This website is built with the ability to use Google Analytics 4 and Microsoft Clarity to understand how visitors use the site, gated behind the cookie banner shown when you first visit — nothing loads unless you click Accept. However, <strong>neither tool is currently switched on with a live account</strong>, so no analytics data is actually collected or sent anywhere right now, whether or not you accept the banner. If we activate either tool in future, we'll update this notice first.</p>
+  <p>The only thing stored automatically is a small note in your browser (local storage, not a cookie) recording whether you accepted or declined the cookie banner, so we don't ask you again on your next visit. This is strictly necessary to make the banner work and doesn't require consent.</p>
+  <p>This site also loads its typefaces from Google Fonts. Doing so involves your browser connecting to Google's servers to fetch the font files, which may see your IP address as part of that request — the same as any website using externally-hosted fonts.</p>
+
+  <h2>Children's information</h2>
+  <p>This website does not directly collect information about children. The enquiry forms and contact details on this site are for parents, guardians, and organisations getting in touch about camps or facility hire — not for children to use directly. Actual holiday camp booking and any information needed for a child's attendance is handled separately through ClassForKids and directly with our team, not through this website.</p>
+
+  <h2>Your rights</h2>
+  <p>Under UK data protection law, you have the right to:</p>
+  <ul>
+    <li>ask us what personal information we hold about you, and get a copy of it (right of access);</li>
+    <li>ask us to correct inaccurate information (right to rectification);</li>
+    <li>ask us to delete information we hold about you (right to erasure);</li>
+    <li>ask us to restrict how we use your information (right to restriction);</li>
+    <li>object to us using your information where we rely on legitimate interests (right to object);</li>
+    <li>ask for your information in a portable format, where relevant (right to data portability).</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at <a href="mailto:getintokeepingsam@gmail.com">getintokeepingsam@gmail.com</a>.</p>
+
+  <h2>Complaints</h2>
+  <p>If you're unhappy with how we've handled your personal information, we'd welcome the chance to put it right first — please contact us using the details above. You also have the right to complain directly to the UK's data protection regulator, the <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener">Information Commissioner's Office (ICO)</a>, at ico.org.uk.</p>
+
+  <h2>Changes to this notice</h2>
+  <p>We'll update this notice as the website changes — in particular once the enquiry forms are connected to a real destination, once analytics tools (if any) are switched on, and once the Bookteq facility-booking widget is installed. We'll update the "last updated" date above whenever we make a change.</p>
+
+  <footer class="legal-footer">
+    <p>Get Into Sport Ltd &middot; Company No. 16398749 &middot; Registered office: 14 Towneley Road, Longridge, Lancashire, PR3 3HU</p>
+  </footer>
+
 </div>
 </body>
 </html>
