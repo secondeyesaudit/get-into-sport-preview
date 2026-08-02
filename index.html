@@ -84,22 +84,23 @@
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root{
   --ink: #0D0B09; --ink-2: #16130F; --ink-line: rgba(244,238,227,0.14); --ink-line-hi: rgba(244,238,227,0.28);
   --paper: #F3EEE2; --paper-2: #E9E1CE; --paper-line: rgba(13,11,9,0.14); --paper-line-hi: rgba(13,11,9,0.30);
   --bone: #F3EEE2; --bone-dim: rgba(243,238,226,0.62); --bone-dimmer: rgba(243,238,226,0.52);
   --char: #0D0B09; --char-dim: rgba(13,11,9,0.62); --char-dimmer: rgba(13,11,9,0.60);
-  /* PLACEHOLDER BRAND COLOURS (2026-08-02): blue-green approximation pending the client's real
-     brand-file hex values. --pine/--pine-hi were already blue-green and are untouched; --rust/
-     --rust-hi were orange and have been re-hued to a complementary blue-green so the whole accent
-     system reads as one blue-green family. One-line swap later: replace these 4 hex values (and
-     the two matching rgba(27,110,90,...) glow copies in .hero::before / .cta-left::before) with
-     the client's confirmed palette. */
-  --rust: #1B6E5A; --rust-hi: #33B092; --pine: #1F4A3C; --pine-hi: #36745D;
+  /* CONFIRMED BRAND COLOURS (2026-08-02): sourced from the live Wix site's computed CSS/colour
+     palette export and the official logo artwork — not estimated. --rust-hi (#1D9AAC) is the
+     site's primary accent (10 of 66 exported Wix palette slots, and the live "active nav"
+     computed colour). --pine/--pine-hi (#263940 navy / #5E9187 sage-teal) come from pixel-counting
+     the official logo PNG. --rust (#066163) is a darker teal variant from the same Wix palette,
+     used where a darker/less-saturated tone of the primary accent reads better. See
+     08_Meetings notes / CHANGELOG.md for the full evidence trail. */
+  --rust: #066163; --rust-hi: #1D9AAC; --pine: #263940; --pine-hi: #5E9187; --accent-active: #0B7FA2;
   --focus-ring: var(--rust-hi);
-  --serif: 'Fraunces', serif; --sans: 'Inter', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
+  --serif: 'Fraunces', serif; --sans: 'Inter', system-ui, sans-serif; --sans-ui: 'Poppins', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
 }
 *{ margin:0; padding:0; box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
@@ -162,7 +163,7 @@ a{ color:inherit; text-decoration:none; }
 .hero-bg{ position:absolute; inset:0; z-index:0; }
 .hero-bg img, .hero-bg video{ width:100%; height:100%; object-fit:cover; filter:saturate(0.92) contrast(1.05); }
 .hero-bg::after{ content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(13,11,9,0.96) 0%, rgba(13,11,9,0.55) 42%, rgba(13,11,9,0.35) 100%); }
-.hero::before{ content:''; position:absolute; width:70vw; height:70vw; max-width:900px; max-height:900px; border-radius:50%; top:-20%; right:-15%; background:radial-gradient(circle, rgba(27,110,90,0.16) 0%, transparent 65%); filter:blur(10px); z-index:0; }
+.hero::before{ content:''; position:absolute; width:70vw; height:70vw; max-width:900px; max-height:900px; border-radius:50%; top:-20%; right:-15%; background:radial-gradient(circle, rgba(6,97,99,0.16) 0%, transparent 65%); filter:blur(10px); z-index:0; }
 .hero-index{ font-family:var(--mono); font-size:0.76rem; letter-spacing:0.14em; color:var(--bone-dim); margin-bottom:36px; position:relative; z-index:2; display:flex; align-items:center; gap:14px; }
 .hero-index::before{ content:''; width:36px; height:1px; background:var(--ink-line-hi); }
 .hero-title{ font-family:var(--serif); font-weight:340; line-height:0.92; letter-spacing:-0.03em; position:relative; z-index:2; }
@@ -219,7 +220,7 @@ a{ color:inherit; text-decoration:none; }
 .photo-carousel{ padding:120px 0; background:var(--paper); --focus-ring:var(--pine); }
 .carousel-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:36px; }
 .carousel-nav{ display:flex; gap:10px; }
-.carousel-nav button{ width:44px; height:44px; border-radius:50%; border:1px solid var(--paper-line-hi); background:transparent; cursor:pointer; font-family:var(--sans); font-size:1.1rem; color:var(--char); transition:background .2s, color .2s; }
+.carousel-nav button{ width:44px; height:44px; border-radius:50%; border:1px solid var(--paper-line-hi); background:transparent; cursor:pointer; font-family:var(--sans-ui); font-size:1.1rem; color:var(--char); transition:background .2s, color .2s; }
 .carousel-nav button:hover{ background:var(--char); color:var(--paper); }
 .carousel-track{ overflow:hidden; }
 .carousel-row{ display:flex; gap:16px; width:max-content; will-change:transform; animation:carousel-scroll linear infinite; animation-duration:60s; }
@@ -245,7 +246,7 @@ a{ color:inherit; text-decoration:none; }
 .blueprint-head .eyebrow{ font-family:var(--mono); font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--char-dim); margin-bottom:20px; }
 .blueprint-count{ font-family:var(--mono); font-size:0.82rem; color:var(--char-dim); text-align:right; }
 .fac-row{ border-bottom:1px solid var(--paper-line); display:grid; grid-template-columns:80px 1fr 40px; align-items:center; padding:30px 0; cursor:pointer; transition:background 0.3s; }
-.fac-row:hover{ background:rgba(31,74,60,0.05); }
+.fac-row:hover{ background:rgba(38,57,64,0.05); }
 .fac-num{ font-family:var(--mono); font-size:0.85rem; color:var(--pine); }
 .fac-name{ font-family:var(--serif); font-weight:400; font-size:clamp(1.4rem,2.6vw,2rem); letter-spacing:-0.01em; }
 .fac-plus{ font-family:var(--mono); font-size:1.1rem; color:var(--char-dim); transition:transform 0.35s; justify-self:end; }
@@ -294,20 +295,22 @@ a{ color:inherit; text-decoration:none; }
 /* CTA SPLIT */
 .cta-split{ display:grid; grid-template-columns:1.2fr 1fr; min-height:640px; }
 .cta-left{ background:var(--ink); color:var(--bone); padding:100px 64px; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden; }
-.cta-left::before{ content:''; position:absolute; width:50vw; height:50vw; max-width:600px; max-height:600px; border-radius:50%; bottom:-30%; left:-20%; background:radial-gradient(circle, rgba(27,110,90,0.22), transparent 65%); }
+.cta-left::before{ content:''; position:absolute; width:50vw; height:50vw; max-width:600px; max-height:600px; border-radius:50%; bottom:-30%; left:-20%; background:radial-gradient(circle, rgba(6,97,99,0.22), transparent 65%); }
 .cta-left h2{ font-family:var(--serif); font-weight:340; font-size:clamp(2.2rem,4.6vw,3.8rem); line-height:1.05; letter-spacing:-0.02em; margin-bottom:40px; position:relative; z-index:1; }
 .cta-pills{ display:flex; flex-direction:column; gap:14px; position:relative; z-index:1; max-width:320px; }
 .cta-pill{ border:1px solid var(--ink-line-hi); border-radius:999px; padding:17px 26px; display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:0.82rem; letter-spacing:0.04em; text-transform:uppercase; transition:background 0.25s, border-color 0.25s, transform 0.25s; }
 .cta-pill:hover{ background:rgba(244,238,227,0.06); border-color:var(--bone); transform:translateX(6px); }
+.cta-solid-accent{ background:var(--rust-hi); color:var(--ink); border-color:var(--rust-hi); }
+.cta-solid-accent:hover{ background:var(--accent-active); border-color:var(--accent-active); color:var(--ink); transform:translateX(6px); }
 .cta-right{ background:var(--paper); color:var(--char); padding:100px 64px; display:flex; flex-direction:column; justify-content:center; --focus-ring:var(--pine); }
 .cta-right .eyebrow{ font-family:var(--mono); font-size:0.74rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--char-dim); margin-bottom:24px; }
 .cform{ display:grid; gap:20px; max-width:420px; }
 .cform label{ font-family:var(--mono); font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--char-dim); }
-.cform input, .cform textarea{ width:100%; background:transparent; border:none; border-bottom:1px solid var(--paper-line-hi); padding:12px 0; font-family:var(--sans); font-size:1.02rem; color:var(--char); }
+.cform input, .cform textarea{ width:100%; background:transparent; border:none; border-bottom:1px solid var(--paper-line-hi); padding:12px 0; font-family:var(--sans-ui); font-size:1.02rem; color:var(--char); }
 .cform input:focus, .cform textarea:focus{ outline:none; border-color:var(--pine); }
 .cform button{ justify-self:start; margin-top:12px; background:var(--char); color:var(--paper); font-family:var(--mono); font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; padding:16px 30px; border-radius:999px; border:none; cursor:pointer; transition:background 0.25s; }
 .cform button:hover{ background:var(--pine); }
-.form-note{ font-family:var(--sans); font-size:0.82rem; color:var(--char-dim); margin-top:-6px; }
+.form-note{ font-family:var(--sans-ui); font-size:0.82rem; color:var(--char-dim); margin-top:-6px; }
 @media (max-width:900px){ .cta-split{ grid-template-columns:1fr; } .cta-left, .cta-right{ padding:64px 24px; } }
 
 /* FOOTER */
@@ -350,6 +353,9 @@ footer.site{ background:var(--ink); color:var(--bone-dim); padding:64px 0 40px; 
 
 .badge-line{ display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:0.74rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--pine-hi); margin-bottom:20px; }
 .badge-line::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--pine-hi); box-shadow:0 0 10px 2px var(--pine-hi); }
+/* pine-hi on paper-2 only gives 2.74:1 (fails 4.5:1) — venue-strip sits on a light background, so use the darker pine there instead */
+.venue-strip .badge-line{ color:var(--pine); }
+.venue-strip .badge-line::before{ background:var(--pine); box-shadow:0 0 10px 2px var(--pine); }
 
 .venue-strip{ background:var(--paper-2); color:var(--char); border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line); padding:56px 0; --focus-ring:var(--pine); }
 .venue-strip-inner{ display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; }
@@ -407,7 +413,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* --- Cookie consent banner --- */
 .cookie-banner{ position:fixed; left:24px; right:24px; bottom:24px; z-index:100; max-width:560px; margin:0 auto; background:var(--ink); color:var(--bone); border:1px solid var(--ink-line-hi); border-radius:12px; padding:24px 28px; box-shadow:0 20px 50px rgba(0,0,0,0.4); transform:translateY(140%); opacity:0; transition:transform 0.5s cubic-bezier(.16,.8,.3,1), opacity 0.5s ease; pointer-events:none; }
 .cookie-banner.visible{ transform:translateY(0); opacity:1; pointer-events:auto; }
-.cookie-banner p{ font-family:var(--sans); font-size:0.92rem; line-height:1.5; color:var(--bone-dim); margin-bottom:18px; }
+.cookie-banner p{ font-family:var(--sans-ui); font-size:0.92rem; line-height:1.5; color:var(--bone-dim); margin-bottom:18px; }
 .cookie-banner-actions{ display:flex; gap:12px; flex-wrap:wrap; }
 .cookie-btn{ font-family:var(--mono); font-size:0.78rem; letter-spacing:0.05em; text-transform:uppercase; padding:12px 22px; border-radius:999px; cursor:pointer; border:1px solid transparent; transition:background 0.2s, color 0.2s, border-color 0.2s; }
 .cookie-btn-solid{ background:var(--bone); color:var(--ink); border-color:var(--bone); }
@@ -498,7 +504,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       </div>
       <div class="cta-right reveal-r">
         <div class="eyebrow">Get in touch</div>
-        <p style="font-family:var(--sans); font-size:0.9rem; color:var(--char-dim); margin:-8px 0 20px;">We&#39;re a small, friendly local team based in Rossendale.</p>
+        <p style="font-family:var(--sans-ui); font-size:0.9rem; color:var(--char-dim); margin:-8px 0 20px;">We&#39;re a small, friendly local team based in Rossendale.</p>
         <form class="cform" onsubmit="alert('Form submitted — wire this to a real email/CRM before launch.'); return false;">
           <div><label for="hname">Name</label><input id="hname" type="text" placeholder="Your name" autocomplete="name" required></div>
           <div><label for="hemail">Email</label><input id="hemail" type="email" placeholder="you@example.com" autocomplete="email" required></div>
@@ -629,9 +635,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <p>Camp booking and payment is handled through our booking partner, ClassForKids. You'll be taken to their site to choose dates and pay securely.</p>
       </div>
       <div style="display:flex; flex-direction:column; align-items:flex-start; gap:12px; min-width:260px;">
-        <!-- PLACEHOLDER: real ClassForKids booking URL to be added once supplied by the client — swap the href below. -->
-        <a href="#" target="_blank" rel="noopener" class="cta-pill" style="width:100%; background:var(--rust-hi); color:var(--ink); border-color:var(--rust-hi);">Book Now on ClassForKids &rarr;</a>
-        <span style="font-family:var(--mono); font-size:0.68rem; color:var(--bone-dimmer);">Placeholder link — real ClassForKids booking URL pending.</span>
+        <a href="https://getintosportltd.classforkids.io/" target="_blank" rel="noopener" class="cta-pill cta-solid-accent" style="width:100%;">Book Now on ClassForKids &rarr;</a>
       </div>
     </div>
   </div>
