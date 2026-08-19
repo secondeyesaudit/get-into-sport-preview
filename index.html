@@ -1003,7 +1003,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     });
   }, {threshold:0.1});
   function revealCheck(){
-    document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(function(el){ io.observe(el); });
+    var revealEls = document.querySelectorAll('.page.active .reveal, .page.active .reveal-l, .page.active .reveal-r');
+    revealEls.forEach(function(el){
+      if(io){
+        io.observe(el);
+      } else {
+        el.classList.add('in');
+      }
+    });
   }
   revealCheck();
 
