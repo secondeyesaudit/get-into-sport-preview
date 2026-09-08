@@ -392,6 +392,13 @@ footer.site{ background:var(--ink); color:var(--bone-dim); padding:64px 0 40px; 
 .vp-3g{ background-image:url("assets/img/client-2026/3g-astroturf.jpg"); }
 .vp-sand{ background-image:url("assets/img/client-2026/sand-astroturf.jpg"); }
 
+.haf-section{ padding:80px 0; background:var(--paper-2); }
+.haf-inner{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; gap:48px; }
+.haf-logo{ display:block; width:100%; max-width:360px; height:auto; margin:auto; }
+.haf-section h2{ font-family:var(--serif); font-size:clamp(1.8rem,3vw,2.6rem); margin-bottom:20px; }
+.haf-section p{ color:var(--char-dim); line-height:1.72; margin-bottom:24px; max-width:540px; }
+@media(max-width:700px){ .haf-inner{ grid-template-columns:1fr; gap:32px; } .haf-logo{ max-width:280px; } }
+
 /* --- WCAG additions --- */
 .skip-link{ position:absolute; left:16px; top:-60px; z-index:200; background:var(--paper); color:var(--char); font-family:var(--mono); font-size:0.82rem; padding:12px 20px; border-radius:6px; transition:top 0.2s ease; }
 .skip-link:focus{ top:16px; outline:2px solid var(--pine); outline-offset:2px; }
@@ -584,9 +591,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       </div>
       <div class="team-wall reveal">
         <div class="team-slot"><div class="team-placeholder"><span class="initial">SD</span><span class="pending">Photo pending</span></div><div class="team-cap"><b>Sam Dawson</b><span>Director &amp; DSL</span></div></div>
-        <div class="team-slot"><div class="team-placeholder"><span class="initial">SM</span><span class="pending">Photo pending</span></div><div class="team-cap"><b>Simon Mayoh</b><span>Director &amp; Coach</span></div></div>
-        <div class="team-slot"><div class="team-placeholder"><span class="initial">PC</span><span class="pending">Photo pending</span></div><div class="team-cap"><b>Patrick Crawshaw</b><span>Director &amp; Coach</span></div></div>
-        <div class="team-slot"><div class="team-placeholder"><span class="initial">NB</span><span class="pending">Photo pending</span></div><div class="team-cap"><b>Nathan Bibby</b><span>Director &amp; Coach</span></div></div>
+        <div class="team-slot"><img src="assets/img/client-2026/simon-mayoh.png" alt="Simon Mayoh" loading="lazy"><div class="team-cap"><b>Simon Mayoh</b><span>Director &amp; Coach</span></div></div>
+        <div class="team-slot"><img src="assets/img/client-2026/patrick-crawshaw.png" alt="Patrick Crawshaw" loading="lazy"><div class="team-cap"><b>Patrick Crawshaw</b><span>Director &amp; Coach</span></div></div>
+        <div class="team-slot"><img src="assets/img/client-2026/nathan-bibby.png" alt="Nathan Bibby" loading="lazy"><div class="team-cap"><b>Nathan Bibby</b><span>Director &amp; Coach</span></div></div>
       </div>
     </div>
   </section>
@@ -636,6 +643,24 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <button class="active" data-q="0" aria-label="Show testimonial 1 of 8" aria-current="true"></button><button data-q="1" aria-label="Show testimonial 2 of 8" aria-current="false"></button><button data-q="2" aria-label="Show testimonial 3 of 8" aria-current="false"></button><button data-q="3" aria-label="Show testimonial 4 of 8" aria-current="false"></button><button data-q="4" aria-label="Show testimonial 5 of 8" aria-current="false"></button><button data-q="5" aria-label="Show testimonial 6 of 8" aria-current="false"></button><button data-q="6" aria-label="Show testimonial 7 of 8" aria-current="false"></button><button data-q="7" aria-label="Show testimonial 8 of 8" aria-current="false"></button>
       </div>
       <a href="https://www.facebook.com/profile.php?id=61575676906139" target="_blank" rel="noopener" style="display:block; margin-top:32px; font-family:var(--mono); font-size:0.74rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--char-dim);">See all our reviews on Facebook &rarr;</a>
+    </div>
+  </section>
+
+  <!-- HAF logo supplied by Simon Mayoh, 8 September 2026, with permission to use.
+       Programme wording supplied by Simon on 4 September 2026. -->
+  <section class="haf-section" id="haf" aria-labelledby="haf-title">
+    <div class="wrap haf-inner">
+      <img class="haf-logo" src="assets/img/haf-logo.png" alt="HAF Rossendale — Holiday Activities &amp; Food" width="830" height="533" loading="lazy">
+      <div>
+        <div class="eyebrow">HAF Rossendale</div>
+        <h2 id="haf-title">HAF Holiday Camps</h2>
+        <h3 style="margin-bottom:20px;">Fun, Active &amp; Inclusive Holiday Provision</h3>
+        <p>We’re proud to deliver the Holiday Activities and Food (HAF) Programme, providing eligible children and young people with access to fun, active and engaging holiday experiences.</p>
+        <p>Our HAF camps combine a wide range of sports, games and activities with opportunities to make new friends, develop confidence and enjoy a healthy, active holiday. Every day is designed to be welcoming, inclusive and enjoyable, with children encouraged to get involved, try something new and have fun.</p>
+        <p>As part of the HAF programme, children can also benefit from nutritious meals and snacks, helping them stay fuelled and ready for a day of activity.</p>
+        <p>Our aim is simple: to give every child the opportunity to enjoy their holidays, stay active, build confidence and create great memories — regardless of their circumstances.</p>
+        <a href="mailto:simongetintosport@gmail.com?subject=HAF%20enquiry" class="cta-pill cta-solid-accent">Enquire about HAF &rarr;</a>
+      </div>
     </div>
   </section>
 
@@ -702,7 +727,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       </div>
       <div class="reveal" style="max-width:640px;">
         <p style="color:var(--char-dim); font-size:1.02rem; line-height:1.72; margin-bottom:24px;">Get Into Sport runs facility lettings at Valley Leadership Academy in Rossendale, Lancashire &mdash; the same local team behind our holiday camps. Seven spaces are available outside school hours, from the trampoline hall to full-size grass pitches, for clubs, schools and community groups.</p>
-        <span class="toc-tag" style="display:inline-block; border:1px dashed var(--paper-line-hi); padding:8px 14px; border-radius:999px;">Placeholder copy &mdash; full "what to expect" details (access, parking, changing facilities) pending final content from the client.</span>
+        <h3 style="margin-bottom:16px;">Facility Access, Parking &amp; Changing Facilities</h3>
+        <p style="margin-bottom:24px;"><strong>Everything You Need, All in One Place</strong></p>
+        <p style="line-height:1.72; margin-bottom:24px;">We’re committed to making your facility hire simple, convenient and hassle-free. As part of our lettings service, hirers and their participants can benefit from convenient access to our facilities, on-site parking and changing facilities, subject to the venue and booking requirements.</p>
+        <h4>Easy Facility Access</h4>
+        <p style="line-height:1.72; margin:12px 0 24px;">Our clear access arrangements ensure your group can arrive, access the facilities and get ready for your session with minimal fuss.</p>
+        <h4>Convenient Parking</h4>
+        <p style="line-height:1.72; margin:12px 0 24px;">On-site parking is available for hirers and participants, making it easy for everyone to arrive and leave safely and conveniently.</p>
+        <h4>Changing Facilities</h4>
+        <p style="line-height:1.72; margin:12px 0 24px;">Where available, changing rooms and associated facilities provide participants with a comfortable space to get changed before and after their activity.</p>
+        <p style="line-height:1.72;">From arrival to departure, we aim to provide a safe, well-managed and professional environment that allows clubs, teams, schools and community groups to focus on what matters — delivering great activities and experiences.</p>
       </div>
     </div>
   </section>
