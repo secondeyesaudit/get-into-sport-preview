@@ -52,8 +52,7 @@
   "@type": "SportsActivityLocation",
   "name": "Get Into Sport",
   "url": "https://getintosportltd.com/",
-  "telephone": "+447308155200",
-  "email": "getintokeepingsam@gmail.com",
+  "email": "simongetintosport@gmail.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Rossendale",
@@ -100,7 +99,7 @@
      08_Meetings notes / CHANGELOG.md for the full evidence trail. */
   --rust: #066163; --rust-hi: #1D9AAC; --pine: #263940; --pine-hi: #5E9187; --accent-active: #0B7FA2;
   --focus-ring: var(--rust-hi);
-  --serif: 'Fraunces', serif; --sans: 'Inter', system-ui, sans-serif; --sans-ui: 'Poppins', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
+  --serif: 'Poppins', system-ui, sans-serif; --sans: 'Inter', system-ui, sans-serif; --sans-ui: 'Poppins', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
 }
 *{ margin:0; padding:0; box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
@@ -130,7 +129,7 @@ a{ color:inherit; text-decoration:none; }
 .corner-mark{ position:fixed; z-index:60; font-family:var(--mono); font-size:0.72rem; letter-spacing:0.06em; color:var(--bone-dim); mix-blend-mode:difference; }
 .corner-tl{ top:28px; left:48px; display:flex; align-items:center; gap:10px; }
 .corner-tl img{ height:30px; width:30px; border-radius:8px; }
-.corner-tl img.official-logo{ height:34px; width:auto; border-radius:0; }
+.corner-tl img.official-logo{ height:64px; width:auto; border-radius:0; }
 .corner-tl b{ font-family:var(--serif); font-weight:600; font-size:0.92rem; letter-spacing:-0.01em; color:var(--bone); }
 .menu-btn{ position:fixed; top:26px; right:48px; z-index:70; background:none; border:1px solid var(--ink-line-hi); color:var(--bone); font-family:var(--mono); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; padding:11px 20px; border-radius:999px; cursor:pointer; mix-blend-mode:difference; transition:border-color 0.2s; }
 .menu-scrim{ position:fixed; top:0; right:0; width:220px; height:110px; z-index:69; pointer-events:none; background:radial-gradient(ellipse 160px 90px at 100% 0%, rgba(13,11,9,0.55) 0%, rgba(13,11,9,0.25) 55%, transparent 80%); }
@@ -444,6 +443,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 ::-moz-selection{ background:var(--rust); color:var(--paper); }
 
 .page.leaving{ animation:none; opacity:0; transition:opacity 0.18s ease; }
+
+/* Client feedback, 11 September 2026 */
+.content-section{padding:90px 0;background:var(--paper);color:var(--char)}
+.prose{max-width:1000px}.prose h2{font-size:clamp(1.8rem,3.4vw,2.8rem);line-height:1.3;margin-bottom:28px}.prose h3{margin:28px 0 16px}.prose p{line-height:1.8;margin-bottom:22px}.prose ul{padding-left:24px;margin-bottom:24px}
+.director-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}.director-card{background:var(--ink-2);border:1px solid var(--ink-line);border-radius:8px;overflow:hidden}.director-card>img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 25%;display:block}.director-copy{padding:24px}.director-copy h3{font-size:1.2rem;margin-bottom:6px}.director-role{color:var(--bone-dim)}.director-copy p{font-size:.94rem;line-height:1.75;margin-top:18px}.director-copy summary{cursor:pointer;color:var(--bone);margin-top:18px;text-decoration:underline}.team-head>p{margin-top:20px;color:var(--bone-dim)}
+.haf-section{color:var(--char)}.haf-section h2,.haf-section h3,.haf-section .eyebrow{color:var(--char)}
+.fac-row.open .fac-desc{max-height:650px}.fac-desc img{width:min(100%,600px);height:auto;max-height:340px;object-fit:cover;border-radius:6px;display:block;margin:0 0 20px 80px}.fac-desc{width:100%}
+.spotlight-text-inner{max-width:720px}.spotlight-text-inner p{line-height:1.75}.hero-title .l2{font-style:normal}.index-head h2{font-style:normal}.strand-title .big{font-size:clamp(2.4rem,6vw,6rem)}
+@media(max-width:1000px){.director-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.director-grid{grid-template-columns:1fr}.director-card{max-width:440px;margin:auto}.corner-tl img.official-logo{height:48px}.fac-desc img{margin-left:0}.content-section{padding:65px 0}}
+
+.fac-desc p{color:var(--bone-dim)}
+.fac-num,.fac-plus{color:var(--bone-dim)}
 </style>
 </head>
 <body>
@@ -458,23 +470,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <div class="menu-scrim" aria-hidden="true"></div>
 <button class="menu-btn" id="menuOpenBtn">Menu</button>
 
-<a class="wa-button" id="waButton" href="https://wa.me/447308155200?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Get%20Into%20Sport" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <span class="wa-ring"></span>
-  <span class="wa-icon"><svg viewBox="0 0 32 32" fill="#ffffff" xmlns="http://www.w3.org/2000/svg"><path d="M16.04 4C9.4 4 4 9.4 4 16.04c0 2.2.58 4.27 1.6 6.05L4 28l6.1-1.6a11.98 11.98 0 0 0 5.94 1.56h.01c6.64 0 12.04-5.4 12.04-12.04C28.09 9.4 22.68 4 16.04 4zm0 21.9h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.62.95.97-3.53-.24-.36a9.85 9.85 0 0 1-1.5-5.33c0-5.47 4.45-9.92 9.92-9.92 2.65 0 5.14 1.03 7.01 2.9a9.85 9.85 0 0 1 2.9 7.02c0 5.47-4.46 9.92-9.93 9.92l-.01-.06zm5.44-7.43c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.44-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.19 5.06 4.47.7.3 1.25.48 1.68.62.7.22 1.35.19 1.85.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg></span>
-  <span class="wa-label">Chat on WhatsApp</span>
-</a>
-
 <div class="overlay-menu" id="overlayMenu">
   <button class="overlay-close" id="menuCloseBtn">✕</button>
   <div class="overlay-links">
+    <a href="#home" data-page="home"><span>00</span> Home &amp; Our Directors</a>
     <a href="#lettings" data-page="lettings"><span>01</span> Facility Bookings &mdash; Valley Leadership Academy</a>
     <a href="#camps" data-page="camps"><span>02</span> Holiday Camps</a>
     <a href="#contact" data-page="contact"><span>03</span> Contact Us</a>
   </div>
   <div class="overlay-foot">
     <span>Rossendale, Lancashire</span>
-    <a href="mailto:getintokeepingsam@gmail.com">getintokeepingsam@gmail.com</a>
-    <a href="tel:07308155200">07308&nbsp;155200</a>
+    <a href="mailto:simongetintosport@gmail.com">Get Into Sport enquiries</a>
   </div>
 </div>
 
@@ -482,10 +488,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <div id="main-content" tabindex="-1"></div>
 <div class="page active" id="page-home">
 
-  <!-- HOMEPAGE — kept deliberately minimal per 2026-08-02 client demo feedback: wordmark,
-       scroll indicator, exactly three single-tier CTAs, nothing else. The content that used to
-       live here (facilities index, coaches/team wall, testimonials, contact form) has moved to
-       the Camps/Lettings/Contact pages, not been deleted — see CHANGELOG.md for the full list. -->
   <section class="hero">
     <div class="hero-bg"><video id="heroVideo" autoplay muted loop playsinline poster="assets/img/img-dbfbbe112e.jpg"><source src="assets/gis-hero-video.mp4" type="video/mp4"></video></div>
     <button type="button" class="video-pause" id="heroVideoPause" aria-label="Pause background video">&#10074;&#10074;</button>
@@ -499,12 +501,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <div class="hero-cta-block" style="margin-right:auto; display:flex; flex-direction:column; align-items:flex-start; gap:14px; max-width:380px;">
           <a href="#lettings" data-page="lettings" class="cta-pill" style="width:100%;">Facility Bookings — Valley Leadership Academy &rarr;</a>
           <a href="#camps" data-page="camps" class="cta-pill" style="width:100%;">Holiday Camps &rarr;</a>
-          <a href="#contact" data-page="contact" class="cta-pill" style="width:100%;">Contact Us / Inquire &rarr;</a>
         </div>
         <div class="scroll-cue"><span>Scroll</span><div class="line"></div></div>
       </div>
     </div>
   </section>
+<section class="content-section"><div class="wrap prose"><div class="eyebrow">About us</div><h2>Creating opportunities. Connecting communities. Inspiring active lifestyles.</h2><p>We created our business to make a positive difference in the way children and communities access sport, physical activity and school facilities.</p><p>With experience across education, community sports coaching and school facility management, we understand what makes a successful programme work — fun, engagement, safety and quality.</p><p>From exciting holiday camps that give children the opportunity to be active and try new things, to opening school facilities to local clubs and community groups outside of school hours, our aim is simple: to create more opportunities for people to be active and help schools become thriving hubs for their communities.</p><p>We are passionate about building strong relationships between schools, families and community clubs, while helping to promote healthy, active lifestyles that can have a lasting impact.</p></div></section><section class="team-section"><div class="wrap"><div class="team-head"><div class="eyebrow">Our directors</div><h2>The team behind Get Into Sport.</h2><p>Supporting our holiday camps, facility lettings and local community.</p></div><div class="director-grid"><article class="director-card"><img src="assets/img/client-2026/sam-dawson.jpg" alt="Sam Dawson" loading="lazy"><div class="director-copy"><h3>Sam Dawson</h3><span class="director-role">Director</span><p>Sam has worked in education for over five years and is currently an IAP Manager at a local secondary school.</p><details><summary>Read full bio</summary><p>Alongside his work in education, Sam has built extensive experience within sport, having managed holiday camps for several years and running his own football coaching business. His commitment to developing sport in the local community extends beyond coaching. Sam founded a local junior football team and has also managed a local women’s first team, giving him valuable experience in supporting players, managing teams and creating opportunities for people of all ages to get involved in sport. Sam is passionate about getting children and young people active and creating positive experiences that encourage them to enjoy sport and stay active. He is also committed to ensuring that local sports facilities remain at the heart of the community, providing accessible opportunities for clubs, families, schools and individuals. Through his combination of experience in education, coaching, team management and community sport, Sam brings a strong understanding of what makes a successful sporting environment — welcoming, inclusive, well organised and focused on the needs of the people who use it.</p></details></div></article><article class="director-card"><img src="assets/img/client-2026/simon-mayoh.png" alt="Simon Mayoh" loading="lazy"><div class="director-copy"><h3>Simon Mayoh</h3><span class="director-role">Director</span><p>With almost 20 years’ experience as a PE teacher, Simon brings extensive experience of education, leadership and school operations to Get Into Sport Lettings Ltd.</p><details><summary>Read full bio</summary><p>Having spent much of his teaching career in middle leadership, alongside experience within senior leadership, he has a strong understanding of the needs and expectations of schools and their wider communities. Alongside his career in education, Simon has worked within the facility lettings sector for a number of years. This gives him a unique understanding of facility hire from both the school and lettings management perspectives, ensuring that facilities are managed professionally, efficiently and with the needs of both schools and hirers in mind. His combination of educational experience, leadership expertise and practical knowledge of facility lettings plays an important role in delivering a high-quality, safe and well-managed service.</p></details></div></article><article class="director-card"><img src="assets/img/client-2026/patrick-crawshaw.png" alt="Patrick Crawshaw" loading="lazy"><div class="director-copy"><h3>Patrick Crawshaw</h3><span class="director-role">Director</span></div></article><article class="director-card"><img src="assets/img/client-2026/nathan-bibby.png" alt="Nathan Bibby" loading="lazy"><div class="director-copy"><h3>Nathan Bibby</h3><span class="director-role">Director</span><p>Nathan brings over 14 years of experience in education and a lifelong career in sport to his role at Get Into Sport Lettings.</p><details><summary>Read full bio</summary><p>Alongside his role with the company, Nathan is currently the School Sports Partnership Manager and School Games Organiser for Rossendale. His extensive experience across education, physical education and sports development gives him a unique understanding of both sides of the facility-letting process. Having worked closely with schools, teachers, pupils, sports organisations and community groups, Nathan understands the importance of making sports facilities accessible and welcoming while ensuring that schools’ priorities and standards remain at the heart of everything we do. He recognises that schools need confidence that their facilities will be well managed, respected and left in the condition they were found, ensuring there is no negative impact on teaching and learning the following day. Nathan also has significant experience in people management and the delivery of large-scale, funded programmes, bringing strong organisational, operational and partnership-management skills to Get Into Sport Lettings. His combination of educational experience, sports development knowledge and practical management expertise helps Get Into Sport Lettings provide a service that works for schools, customers and the wider community.</p></details></div></article></div></div></section>
 </div>
 
 <!-- ============ CONTACT ============ -->
@@ -539,8 +541,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   <section class="strand-open camps">
     <div class="strand-open-inner reveal">
       <div class="strand-eyebrow">Holiday camps · Ages 5–12</div>
-      <h2 class="strand-title"><span class="big">Six weeks</span><span class="big accent">of summer.</span></h2>
-      <p class="lede">Football, dodgeball, mini-Olympics — every ability, 8:30am–4:30pm.</p>
+      <h2 class="strand-title"><span class="big">Every school holiday.</span><span class="big accent">All year round.</span></h2>
+      <p class="lede">Sports, creative games and team challenges for children aged 5–12, every school holiday. Camp days run 8:30am–4:30pm.</p>
       <div style="margin-top:34px;">
         <a href="https://getintosportltd.classforkids.io/" target="_blank" rel="noopener" class="cta-pill cta-solid-accent" style="width:auto; display:inline-flex;">Book Now on ClassForKids &rarr;</a>
       </div>
@@ -557,46 +559,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       <div class="spotlight-text reveal-r">
         <div class="spotlight-text-inner">
           <div class="eyebrow">About us</div>
-          <h3>Six weeks of summer, sorted for parents.</h3>
-          <p>Multi-sport camps, DBS-checked coaches, every ability welcome. DBS checked, first aid trained, safeguarding compliant — every coach, every session.</p>
+          <h3>Active holidays, all year round.</h3>
+          <p>Get Into Sport is proud to deliver an exciting, inclusive, and action-packed holiday camp provision throughout the year. Designed for children of all abilities aged 5–12, our camps offer a safe, structured and fun environment where young people can stay active, make new friends and develop key physical and social skills.</p><p>Each day is filled with a variety of activities ranging from football, dodgeball, and basketball to creative games, team-building challenges, and mini-Olympics – ensuring every child is engaged and encouraged to try something new. Our experienced and qualified coaches are passionate about delivering high-quality sessions that promote enjoyment, confidence, and personal growth. Whether your child is a budding athlete or simply looking to stay active and have fun during the holidays, Get Into Sport offers something for everyone. With flexible booking options, themed weeks, prizes and a focus on wellbeing, our camps are the perfect solution for parents seeking a reliable and enriching childcare option during the school holidays.</p>
           <div class="stat-line">
             <div><b>5–12</b><span>Age range</span></div>
             <div><b>8:30–4:30</b><span>Drop-off to pick-up</span></div>
-            <div><b>6 wks</b><span>Summer coverage</span></div>
+            <div><b>All year</b><span>Every school holiday</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="wrap">
-    <div class="editorial-stats reveal">
-      <div><b>Full week</b><span>Mon–Fri, 8:30am–4:30pm. Most popular.</span></div>
-      <div><b>Single or half day</b><span>Try us out, or top up a week.</span></div>
-      <div><b>Standard day</b><span>Drop off from 8:30am, pick up by 4:30pm.</span></div>
-    </div>
-  </div>
-
   <div class="image-break reveal">
     <img src="assets/img/client-2026/basketball-camp.jpg" alt="Children taking part in a basketball session at a Get Into Sport holiday camp" loading="lazy">
-    <span class="cap">Six weeks, every summer</span>
+    <span class="cap">Every school holiday, all year round</span>
   </div>
-
-  <!-- COACHES LIST -->
-  <section class="team-section">
-    <div class="wrap">
-      <div class="team-head reveal">
-        <div class="eyebrow">Coaches</div>
-        <h2>The coaches on site every session.</h2>
-      </div>
-      <div class="team-wall reveal">
-        <div class="team-slot"><div class="team-placeholder"><span class="initial">SD</span><span class="pending">Photo pending</span></div><div class="team-cap"><b>Sam Dawson</b><span>Director &amp; DSL</span></div></div>
-        <div class="team-slot"><img src="assets/img/client-2026/simon-mayoh.png" alt="Simon Mayoh" loading="lazy"><div class="team-cap"><b>Simon Mayoh</b><span>Director &amp; Coach</span></div></div>
-        <div class="team-slot"><img src="assets/img/client-2026/patrick-crawshaw.png" alt="Patrick Crawshaw" loading="lazy"><div class="team-cap"><b>Patrick Crawshaw</b><span>Director &amp; Coach</span></div></div>
-        <div class="team-slot"><img src="assets/img/client-2026/nathan-bibby.png" alt="Nathan Bibby" loading="lazy"><div class="team-cap"><b>Nathan Bibby</b><span>Director &amp; Coach</span></div></div>
-      </div>
-    </div>
-  </section>
 
   <section class="photo-carousel">
     <div class="wrap">
@@ -664,6 +642,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     </div>
   </section>
 
+<section class="content-section"><div class="wrap prose"><div class="eyebrow">Planning your visit</div><h2>A safe, active and welcoming day.</h2><p>Our staff are First Aid trained, DBS-checked and trained in child-protection procedures. Children can try different sports, develop skills and confidence, make new friends and enjoy activities in a safe, supportive environment.</p><p>Places must be booked in advance and are subject to availability.</p><h3>Cancellations</h3><p>Refunds or credit are available for cancellations made at least 48 hours before the session. Refunds are not available for no-shows or late cancellations.</p></div></section>
   <!-- BOOKING -->
   <div class="wrap">
     <div class="book-panel reveal">
@@ -690,6 +669,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     <div class="strand-img"><img src="assets/img/client-2026/3g-astroturf.jpg" alt="Valley Leadership Academy 3G astroturf available for community hire" loading="lazy"></div>
   </section>
 
+<section class="content-section"><div class="wrap prose"><div class="eyebrow">Facility lettings</div><h2>Opening school facilities. Connecting communities. Creating opportunities.</h2><p>We provide flexible, affordable and professionally managed facility hire for local community groups, sports clubs, organisations and individuals.</p><p>Our aim is to make high-quality school facilities accessible beyond the school day, creating more opportunities for people of all ages to participate in sport, physical activity, education and community activities.</p><p>Facilities are available to hire Monday to Friday from 5:00pm–10:00pm and throughout the day at weekends, with both long-term block bookings and short-term or ad hoc hire available to suit your needs.</p><h3>Our facilities include</h3><ul><li>Sports Hall</li><li>Trampoline Hall</li><li>3G Astroturf</li><li>Classrooms</li><li>Grass Pitches</li><li>Theatre Spaces</li></ul><p>Whether you&#x27;re an established sports club looking for a regular training venue, a community organisation planning an event, or an individual looking for a space for a specific activity, we aim to provide a straightforward and professional booking experience.</p><h3>Supporting an Active Community</h3><p>We believe schools can play an important role at the heart of their local communities. By making school facilities available outside of normal school hours, we want to help remove barriers to participation, support local clubs and organisations, and encourage more people to become active.</p><p>We are passionate about developing strong relationships with community partners and creating a network of opportunities that benefits local residents. From grassroots sport and recreational activities to community events and educational programmes, our facilities are available to help bring people together.</p><p>Our goal is simple: to make great facilities accessible, encourage participation and help create healthier, more active and connected communities.</p></div></section>
   <!-- BOOK NOW -- Bookteq live calendar widget -->
   <section class="venue-strip" id="bookteq-widget">
     <div class="wrap">
@@ -708,12 +688,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
   <div class="wrap" style="padding-top:110px;">
     <div id="facListLettings">
-      <div class="fac-row reveal" data-i="01" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">01</span><span class="fac-name">Trampoline hall</span><span class="fac-plus">+</span><div class="fac-desc"><p>Trampolining sessions and coaching.</p></div></div>
+      <div class="fac-row reveal" data-i="01" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">01</span><span class="fac-name">Trampoline hall</span><span class="fac-plus">+</span><div class="fac-desc"><img src="assets/img/client-2026/trampoline-hall.jpg" alt="Trampoline hall at Valley Leadership Academy" loading="lazy"><p>Trampolining sessions and coaching.</p></div></div>
       <div class="fac-row reveal" data-i="02" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">02</span><span class="fac-name">Art theatre</span><span class="fac-plus">+</span><div class="fac-desc"><p>Performance and community events.</p></div></div>
       <div class="fac-row reveal" data-i="03" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">03</span><span class="fac-name">Classrooms</span><span class="fac-plus">+</span><div class="fac-desc"><p>Clubs, meetings, community groups.</p></div></div>
-      <div class="fac-row reveal" data-i="04" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">04</span><span class="fac-name">Sports hall</span><span class="fac-plus">+</span><div class="fac-desc"><p>Indoor training and five-a-side.</p></div></div>
-      <div class="fac-row reveal" data-i="05" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">05</span><span class="fac-name">3G football pitch</span><span class="fac-plus">+</span><div class="fac-desc"><p>Full-size, for training and matches.</p></div></div>
-      <div class="fac-row reveal" data-i="06" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">06</span><span class="fac-name">Sand-based astro</span><span class="fac-plus">+</span><div class="fac-desc"><p>Suited to hockey, smaller-sided games.</p></div></div>
+      <div class="fac-row reveal" data-i="04" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">04</span><span class="fac-name">Sports hall</span><span class="fac-plus">+</span><div class="fac-desc"><img src="assets/img/client-2026/sports-hall.jpg" alt="Sports hall at Valley Leadership Academy" loading="lazy"><p>Indoor training and five-a-side.</p></div></div>
+      <div class="fac-row reveal" data-i="05" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">05</span><span class="fac-name">3G football pitch</span><span class="fac-plus">+</span><div class="fac-desc"><img src="assets/img/client-2026/3g-astroturf.jpg" alt="3G football pitch at Valley Leadership Academy" loading="lazy"><p>Full-size, for training and matches.</p></div></div>
+      <div class="fac-row reveal" data-i="06" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">06</span><span class="fac-name">Sand-based astro</span><span class="fac-plus">+</span><div class="fac-desc"><img src="assets/img/client-2026/sand-astroturf.jpg" alt="Sand-based astroturf at Valley Leadership Academy" loading="lazy"><p>Suited to hockey, smaller-sided games.</p></div></div>
       <div class="fac-row reveal" data-i="07" tabindex="0" role="button" aria-expanded="false"><span class="fac-num">07</span><span class="fac-name">Grass pitches</span><span class="fac-plus">+</span><div class="fac-desc"><p>Football, rugby, team training.</p></div></div>
     </div>
   </div>
@@ -726,7 +706,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         <h2>What to expect when you hire with us.</h2>
       </div>
       <div class="reveal" style="max-width:640px;">
-        <p style="color:var(--char-dim); font-size:1.02rem; line-height:1.72; margin-bottom:24px;">Get Into Sport runs facility lettings at Valley Leadership Academy in Rossendale, Lancashire &mdash; the same local team behind our holiday camps. Seven spaces are available outside school hours, from the trampoline hall to full-size grass pitches, for clubs, schools and community groups.</p>
         <h3 style="margin-bottom:16px;">Facility Access, Parking &amp; Changing Facilities</h3>
         <p style="margin-bottom:24px;"><strong>Everything You Need, All in One Place</strong></p>
         <p style="line-height:1.72; margin-bottom:24px;">We’re committed to making your facility hire simple, convenient and hassle-free. As part of our lettings service, hirers and their participants can benefit from convenient access to our facilities, on-site parking and changing facilities, subject to the venue and booking requirements.</p>
@@ -802,9 +781,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       </div>
       <div class="foot-col">
         <h3>Direct</h3>
-        <a href="mailto:getintokeepingsam@gmail.com">getintokeepingsam@gmail.com</a>
-        <a href="tel:07308155200">07308&nbsp;155200</a>
-        <a href="https://wa.me/447308155200" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:simongetintosport@gmail.com">Get Into Sport enquiries</a>
       </div>
       <div class="foot-col">
         <h3>Find us</h3>
@@ -880,12 +857,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     lettings: 'Facility Lettings, Rossendale | Get Into Sport',
     contact: 'Contact Us | Get Into Sport'
   };
-  var WA_TEXT = {
-    home: "Hi, I'd like to find out more about Get Into Sport",
-    camps: "Hi, I'd like to find out about booking a holiday camp place",
-    lettings: "Hi, I'd like to enquire about hiring a facility",
-    contact: "Hi, I'd like to get in touch about Get Into Sport"
-  };
   function showPage(name, opts){
     opts = opts || {};
     var current = document.querySelector('.page.active');
@@ -902,10 +873,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
           history.pushState({page:name}, '', hash);
         }
       }
-      var waBtn = document.getElementById('waButton');
-      if(waBtn && WA_TEXT[name]){
-        waBtn.href = 'https://wa.me/447308155200?text=' + encodeURIComponent(WA_TEXT[name]);
-      }
+
     }
     if(!opts.instant && current && target && current !== target){
       current.classList.add('leaving');
