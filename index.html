@@ -224,16 +224,16 @@ a{ color:inherit; text-decoration:none; }
 .carousel-nav button:hover{ background:var(--char); color:var(--paper); }
 .carousel-track{ overflow:hidden; }
 .carousel-row{ display:flex; gap:16px; width:max-content; will-change:transform; animation:carousel-scroll linear infinite; animation-duration:60s; }
-.photo-carousel:hover .carousel-row{ animation-play-state:paused; }
+
 .carousel-row.paused-manual{ animation-play-state:paused; }
-@keyframes carousel-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+@keyframes carousel-scroll{ from{ transform:translateX(0); } to{ transform:translateX(calc(-50% - 8px)); } }
 .carousel-track::-webkit-scrollbar{ display:none; }
 .carousel-item{ flex:0 0 300px; width:300px; height:300px; min-width:300px; border-radius:2px; background-size:cover; background-position:center; filter:saturate(0.96) contrast(1.02); }
 @media (max-width:600px){ .photo-carousel{ padding:80px 0; } .carousel-item{ flex-basis:220px; width:220px; min-width:220px; height:220px; } }
 
 /* MANIFESTO — full ink */
 .manifesto{ background:var(--ink); color:var(--bone); padding:220px 0; position:relative; overflow:hidden; text-align:center; }
-.manifesto::before{ content:'”'; position:absolute; top:-4%; left:50%; transform:translateX(-50%); font-family:var(--serif); font-size:64vw; line-height:1; color:rgba(244,238,227,0.035); pointer-events:none; font-weight:700; }
+.manifesto::before{ content:'”'; position:absolute; top:-4%; left:50%; transform:translateX(calc(-50% - 8px)); font-family:var(--serif); font-size:64vw; line-height:1; color:rgba(244,238,227,0.035); pointer-events:none; font-weight:700; }
 .manifesto-inner{ max-width:920px; margin:0 auto; position:relative; z-index:1; }
 .manifesto p{ font-family:var(--serif); font-weight:320; font-style:italic; font-size:clamp(1.7rem,4.4vw,3.3rem); line-height:1.32; letter-spacing:-0.01em; }
 .manifesto p b{ font-weight:600; font-style:normal; color:var(--rust-hi); }
@@ -468,6 +468,27 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
 .facility-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;padding:0 0 32px 76px;align-items:start}.facility-content>img{width:100%;height:auto;max-height:380px;object-fit:cover;border-radius:8px}.facility-info p{line-height:1.75;margin-bottom:24px}.facility-price{font-size:1.15rem;font-weight:700}.facility-text-only{grid-template-columns:1fr;max-width:860px}.facility-info .cta-pill{width:auto;font-size:.72rem}
 @media(max-width:700px){.facility-card summary{grid-template-columns:28px minmax(0,1fr) 24px;gap:10px}.facility-content{grid-template-columns:1fr;padding-left:0;gap:24px}}
 
+
+/* September 18: brand headings, accessible menu and new client content. */
+h1,h2,h3,h4,.eyebrow,.strand-eyebrow,.camp-strap,.team-strap,.image-break .cap{font-family:var(--sans-ui);text-transform:uppercase;font-style:normal!important}
+.strand-title .accent{font-style:normal}.hero-title .l2{color:var(--pine-hi)}
+.hero-title,.strand-title{line-height:1.06}.camp-intro{margin-top:28px}
+.photo-carousel{color:var(--char)}
+.content-section .eyebrow,.team-head>.eyebrow,.spotlight-text-inner>.eyebrow{font-size:clamp(1.3rem,2.8vw,2rem);font-weight:700;letter-spacing:.02em;line-height:1.25}
+.hero-title .l1{font-size:clamp(3rem,9vw,8.5rem)}.hero-title .l2{font-size:clamp(3rem,9vw,8.5rem)}
+.strand-title .big{font-size:clamp(2rem,4.8vw,4.8rem);overflow-wrap:normal}
+.overlay-menu{overflow-y:auto;overscroll-behavior:contain;justify-content:flex-start;gap:40px;padding-top:100px}
+.overlay-links,.overlay-foot{flex-shrink:0}.overlay-links a{font-size:clamp(1.8rem,4.5vw,3.5rem);line-height:1.25}.overlay-foot{flex-wrap:wrap;gap:16px}.overlay-close{position:fixed}
+.team-head p{max-width:760px}.team-strap{font-size:1.1rem;font-weight:700;margin-top:24px}.camp-intro{max-width:640px}.camp-intro h3{font-size:1.4rem}.camp-intro p{margin-top:16px;line-height:1.7}.camp-strap{font-weight:700}
+.parents-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}.parents-grid img{width:100%;border-radius:8px}.benefit-list{list-style:none;padding:0;margin-top:28px}.benefit-list li{padding:12px 0;border-bottom:1px solid var(--paper-line-hi)}.benefit-list li::before{content:'✓';margin-right:12px;color:var(--rust);font-weight:700}
+.reception-gallery{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:40px 0}.reception-gallery img{width:100%;display:block;border-radius:8px}.reception-gallery figcaption{font-size:.85rem;margin-top:12px}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:40px}.benefits-grid h3{font-size:1.1rem;margin-bottom:16px}.benefits-grid p{line-height:1.75}
+.lettings-faq details{border-bottom:1px solid var(--paper-line-hi);padding:22px 0}.lettings-faq summary{cursor:pointer;font-weight:700;line-height:1.5}.lettings-faq details p{margin:20px 0 0}.lettings-faq a,.embed-slot a{text-decoration:underline}
+#facListLettings,#bookteq-widget{scroll-margin-top:100px}
+.vp-theatre{background-image:url('assets/img/client-2026/arts-theatre.png')}.vp-classroom{background-image:url('assets/img/client-2026/classroom.png')}
+@media(prefers-reduced-motion:reduce){.carousel-row{animation-duration:60s!important;animation-iteration-count:infinite!important}}
+@media(max-width:700px){.parents-grid,.reception-gallery,.benefits-grid{grid-template-columns:1fr}.overlay-menu{padding:95px 24px 40px}.overlay-links a{gap:12px}.hero-title .l2{margin-left:0}.team-head h2,.content-section h2,.index-head h2{overflow-wrap:anywhere}}
+
 </style>
 </head>
 <body>
@@ -485,7 +506,7 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
 <div class="overlay-menu" id="overlayMenu">
   <button class="overlay-close" id="menuCloseBtn">✕</button>
   <div class="overlay-links">
-    <a href="#home" data-page="home"><span>00</span> Home &amp; Our Directors</a>
+    <a href="#home" data-page="home"><span>00</span> Home</a>
     <a href="#lettings" data-page="lettings"><span>01</span> Facility Bookings &mdash; Valley Leadership Academy</a>
     <a href="#camps" data-page="camps"><span>02</span> Holiday Camps</a>
     <a href="#contact" data-page="contact"><span>03</span> Contact Us</a>
@@ -518,7 +539,7 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
       </div>
     </div>
   </section>
-<section class="content-section"><div class="wrap prose"><div class="eyebrow">About us</div><h2>Creating opportunities. Connecting communities. Inspiring active lifestyles.</h2><p>We created our business to make a positive difference in the way children and communities access sport, physical activity and school facilities.</p><p>With experience across education, community sports coaching and school facility management, we understand what makes a successful programme work — fun, engagement, safety and quality.</p><p>From exciting holiday camps that give children the opportunity to be active and try new things, to opening school facilities to local clubs and community groups outside of school hours, our aim is simple: to create more opportunities for people to be active and help schools become thriving hubs for their communities.</p><p>We are passionate about building strong relationships between schools, families and community clubs, while helping to promote healthy, active lifestyles that can have a lasting impact.</p></div></section><section class="team-section"><div class="wrap"><div class="team-head"><div class="eyebrow">Our directors</div><h2>The team behind Get Into Sport.</h2><p>Supporting our holiday camps, facility lettings and local community.</p></div><div class="director-grid"><article class="director-card"><img src="assets/img/client-2026/sam-dawson.jpg" alt="Sam Dawson" loading="lazy"><div class="director-copy"><h3>Sam Dawson</h3><span class="director-role">Director</span><p>Sam has worked in education for over five years and is currently an IAP Manager at a local secondary school.</p><details><summary>Read full bio</summary><p>Alongside his work in education, Sam has built extensive experience within sport, having managed holiday camps for several years and running his own football coaching business. His commitment to developing sport in the local community extends beyond coaching. Sam founded a local junior football team and has also managed a local women’s first team, giving him valuable experience in supporting players, managing teams and creating opportunities for people of all ages to get involved in sport. Sam is passionate about getting children and young people active and creating positive experiences that encourage them to enjoy sport and stay active. He is also committed to ensuring that local sports facilities remain at the heart of the community, providing accessible opportunities for clubs, families, schools and individuals. Through his combination of experience in education, coaching, team management and community sport, Sam brings a strong understanding of what makes a successful sporting environment — welcoming, inclusive, well organised and focused on the needs of the people who use it.</p></details></div></article><article class="director-card"><img src="assets/img/client-2026/simon-mayoh.png" alt="Simon Mayoh" loading="lazy"><div class="director-copy"><h3>Simon Mayoh</h3><span class="director-role">Director</span><p>With almost 20 years’ experience as a PE teacher, Simon brings extensive experience of education, leadership and school operations to Get Into Sport Lettings Ltd.</p><details><summary>Read full bio</summary><p>Having spent much of his teaching career in middle leadership, alongside experience within senior leadership, he has a strong understanding of the needs and expectations of schools and their wider communities. Alongside his career in education, Simon has worked within the facility lettings sector for a number of years. This gives him a unique understanding of facility hire from both the school and lettings management perspectives, ensuring that facilities are managed professionally, efficiently and with the needs of both schools and hirers in mind. His combination of educational experience, leadership expertise and practical knowledge of facility lettings plays an important role in delivering a high-quality, safe and well-managed service.</p></details></div></article><article class="director-card"><img src="assets/img/client-2026/patrick-crawshaw.png" alt="Patrick Crawshaw" loading="lazy"><div class="director-copy"><h3>Patrick Crawshaw</h3><span class="director-role">Director</span><p>Patrick has over 10 years’ experience of coaching and working with children and young people, with a passion for using sport to develop both better players and better people.</p><details><summary>Read full bio</summary><p>With a background in primary PE teaching and extensive experience in education, Patrick understands the importance of supporting young people both on and off the pitch.</p><p>Patrick also has experience within facility lettings and, through his coaching and work within the local area, has developed strong links with the local community. He is passionate about creating opportunities for children and young people to participate in sport within a safe, supportive and enjoyable environment.</p><p>His combination of education, coaching, facility lettings and community experience provides valuable insight to Get Into Sport Lettings, supporting the company’s commitment to delivering well-managed facilities and creating increased opportunities for participation within the local community.</p></details></div></article><article class="director-card"><img src="assets/img/client-2026/nathan-bibby.png" alt="Nathan Bibby" loading="lazy"><div class="director-copy"><h3>Nathan Bibby</h3><span class="director-role">Director</span><p>Nathan brings over 14 years of experience in education and a lifelong career in sport to his role at Get Into Sport Lettings.</p><details><summary>Read full bio</summary><p>Alongside his role with the company, Nathan is currently the School Sports Partnership Manager and School Games Organiser for Rossendale. His extensive experience across education, physical education and sports development gives him a unique understanding of both sides of the facility-letting process. Having worked closely with schools, teachers, pupils, sports organisations and community groups, Nathan understands the importance of making sports facilities accessible and welcoming while ensuring that schools’ priorities and standards remain at the heart of everything we do. He recognises that schools need confidence that their facilities will be well managed, respected and left in the condition they were found, ensuring there is no negative impact on teaching and learning the following day. Nathan also has significant experience in people management and the delivery of large-scale, funded programmes, bringing strong organisational, operational and partnership-management skills to Get Into Sport Lettings. His combination of educational experience, sports development knowledge and practical management expertise helps Get Into Sport Lettings provide a service that works for schools, customers and the wider community.</p></details></div></article></div></div></section>
+<section class="content-section"><div class="wrap prose"><div class="eyebrow">About us</div><h2>Creating opportunities. Connecting communities. Inspiring active lifestyles.</h2><p>We created our business to make a positive difference in the way children and communities access sport, physical activity and school facilities.</p><p>With experience across education, community sports coaching and school facility management, we understand what makes a successful programme work — fun, engagement, safety and quality.</p><p>From exciting holiday camps that give children the opportunity to be active and try new things, to opening school facilities to local clubs and community groups outside of school hours, our aim is simple: to create more opportunities for people to be active and help schools become thriving hubs for their communities.</p><p>We are passionate about building strong relationships between schools, families and community clubs, while helping to promote healthy, active lifestyles that can have a lasting impact.</p></div></section><section class="team-section"><div class="wrap"><div class="team-head"><div class="eyebrow">Our directors</div><h2>The team behind Get Into Sport.</h2><p class="team-strap">Run by people who understand sport and education.</p><p>Get Into Sport was created by experienced education and sports professionals who understand what makes great sporting experiences — and what schools need from a trusted lettings partner.</p></div><div class="director-grid"><article class="director-card"><img src="assets/img/client-2026/sam-dawson.jpg" alt="Sam Dawson" loading="lazy"><div class="director-copy"><h3>Sam Dawson</h3><span class="director-role">Director</span><p>Sam has worked in education for over five years and is currently an IAP Manager at a local secondary school.</p><details><summary>Read full bio</summary><p>Alongside his work in education, Sam has built extensive experience within sport, having managed holiday camps for several years and running his own football coaching business. His commitment to developing sport in the local community extends beyond coaching. Sam founded a local junior football team and has also managed a local women’s first team, giving him valuable experience in supporting players, managing teams and creating opportunities for people of all ages to get involved in sport. Sam is passionate about getting children and young people active and creating positive experiences that encourage them to enjoy sport and stay active. He is also committed to ensuring that local sports facilities remain at the heart of the community, providing accessible opportunities for clubs, families, schools and individuals. Through his combination of experience in education, coaching, team management and community sport, Sam brings a strong understanding of what makes a successful sporting environment — welcoming, inclusive, well organised and focused on the needs of the people who use it.</p></details></div></article><article class="director-card"><img src="assets/img/client-2026/simon-mayoh.png" alt="Simon Mayoh" loading="lazy"><div class="director-copy"><h3>Simon Mayoh</h3><span class="director-role">Director</span><p>With almost 20 years’ experience as a PE teacher, Simon brings extensive experience of education, leadership and school operations to Get Into Sport Ltd.</p><details><summary>Read full bio</summary><p>Having spent much of his teaching career in middle leadership, alongside experience within senior leadership, he has a strong understanding of the needs and expectations of schools and their wider communities. Alongside his career in education, Simon has worked within the facility lettings sector for a number of years. This gives him a unique understanding of facility hire from both the school and lettings management perspectives, ensuring that facilities are managed professionally, efficiently and with the needs of both schools and hirers in mind. His combination of educational experience, leadership expertise and practical knowledge of facility lettings plays an important role in delivering a high-quality, safe and well-managed service.</p></details></div></article><article class="director-card"><img src="assets/img/client-2026/patrick-crawshaw.png" alt="Patrick Crawshaw" loading="lazy"><div class="director-copy"><h3>Patrick Crawshaw</h3><span class="director-role">Director</span><p>Patrick has over 10 years’ experience of coaching and working with children and young people, with a passion for using sport to develop both better players and better people.</p><details><summary>Read full bio</summary><p>With a background in primary PE teaching and extensive experience in education, Patrick understands the importance of supporting young people both on and off the pitch.</p><p>Patrick also has experience within facility lettings and, through his coaching and work within the local area, has developed strong links with the local community. He is passionate about creating opportunities for children and young people to participate in sport within a safe, supportive and enjoyable environment.</p><p>His combination of education, coaching, facility lettings and community experience provides valuable insight to Get Into Sport Ltd, supporting the company’s commitment to delivering well-managed facilities and creating increased opportunities for participation within the local community.</p></details></div></article><article class="director-card"><img src="assets/img/client-2026/nathan-bibby.png" alt="Nathan Bibby" loading="lazy"><div class="director-copy"><h3>Nathan Bibby</h3><span class="director-role">Director</span><p>Nathan brings over 14 years of experience in education and a lifelong career in sport to his role at Get Into Sport Ltd.</p><details><summary>Read full bio</summary><p>Alongside his role with the company, Nathan is currently the School Sports Partnership Manager and School Games Organiser for Rossendale. His extensive experience across education, physical education and sports development gives him a unique understanding of both sides of the facility-letting process. Having worked closely with schools, teachers, pupils, sports organisations and community groups, Nathan understands the importance of making sports facilities accessible and welcoming while ensuring that schools’ priorities and standards remain at the heart of everything we do. He recognises that schools need confidence that their facilities will be well managed, respected and left in the condition they were found, ensuring there is no negative impact on teaching and learning the following day. Nathan also has significant experience in people management and the delivery of large-scale, funded programmes, bringing strong organisational, operational and partnership-management skills to Get Into Sport Ltd. His combination of educational experience, sports development knowledge and practical management expertise helps Get Into Sport Ltd provide a service that works for schools, customers and the wider community.</p></details></div></article></div></div></section>
 </div>
 
 <!-- ============ CONTACT ============ -->
@@ -554,7 +575,7 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
     <div class="strand-open-inner reveal">
       <div class="strand-eyebrow">Holiday camps · Ages 5–12</div>
       <h2 class="strand-title"><span class="big">Every school holiday.</span><span class="big accent">All year round.</span></h2>
-      <p class="lede">Sports, creative games and team challenges for children aged 5–12, every school holiday. Camp days run 8:30am–4:30pm.</p>
+      <div class="camp-intro"><h3>More than just football.</h3><p class="camp-strap">Sport. Games. Challenges. New experiences.</p><p>Football, dodgeball, basketball, trampolining, dance, glow sports, team challenges, creative activities and much more.</p><p><strong>No experience necessary. Every ability welcome.</strong></p></div>
       <div style="margin-top:34px;">
         <a href="https://getintosportltd.classforkids.io/" target="_blank" rel="noopener" class="cta-pill cta-solid-accent" style="width:auto; display:inline-flex;">Book Now on ClassForKids &rarr;</a>
       </div>
@@ -570,7 +591,7 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
       </div>
       <div class="spotlight-text reveal-r">
         <div class="spotlight-text-inner">
-          <div class="eyebrow">About us</div>
+          <div class="eyebrow">Holiday Camps</div>
           <h3>Active holidays, all year round.</h3>
           <p>Get Into Sport is proud to deliver an exciting, inclusive, and action-packed holiday camp provision throughout the year. Designed for children of all abilities aged 5–12, our camps offer a safe, structured and fun environment where young people can stay active, make new friends and develop key physical and social skills.</p><p>Each day is filled with a variety of activities ranging from football, dodgeball, and basketball to creative games, team-building challenges, and mini-Olympics – ensuring every child is engaged and encouraged to try something new. Our experienced and qualified coaches are passionate about delivering high-quality sessions that promote enjoyment, confidence, and personal growth. Whether your child is a budding athlete or simply looking to stay active and have fun during the holidays, Get Into Sport offers something for everyone. With flexible booking options, themed weeks, prizes and a focus on wellbeing, our camps are the perfect solution for parents seeking a reliable and enriching childcare option during the school holidays.</p>
           <div class="stat-line">
@@ -614,6 +635,7 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
     </div>
   </section>
 
+<section class="parents-section content-section"><div class="wrap parents-grid"><div><h2>Why parents choose Get Into Sport</h2><ul class="benefit-list"><li>DBS-checked coaches</li><li>First-aid trained staff</li><li>Safeguarding procedures in place</li><li>Qualified and experienced sports coaches</li><li>Inclusive — all abilities welcome</li><li>8.30am–4.30pm supervised provision</li><li>Trusted by local families</li></ul></div><img src="assets/img/client-2026/table-tennis-camp.jpg" alt="Children enjoying table tennis at a Get Into Sport holiday camp" loading="lazy"></div></section>
   <!-- REVIEWS -->
   <section class="quote-section">
     <div class="wrap">
@@ -638,6 +660,21 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
 
   <!-- HAF logo supplied by Simon Mayoh, 8 September 2026, with permission to use.
        Programme wording supplied by Simon on 4 September 2026. -->
+
+
+
+  <!-- BOOKING -->
+  <div class="wrap">
+    <div class="book-panel reveal">
+      <div>
+        <h3>Ready to book?</h3>
+        <p>Camp booking and payment is handled through our booking partner, ClassForKids. You'll be taken to their site to choose dates and pay securely.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:flex-start; gap:12px; min-width:260px;">
+        <a href="https://getintosportltd.classforkids.io/" target="_blank" rel="noopener" class="cta-pill cta-solid-accent" style="width:100%;">Book Now on ClassForKids &rarr;</a>
+      </div>
+    </div>
+  </div>
   <section class="haf-section" id="haf" aria-labelledby="haf-title">
     <div class="wrap haf-inner">
       <img class="haf-logo" src="assets/img/haf-logo.png" alt="HAF Rossendale — Holiday Activities &amp; Food" width="830" height="533" loading="lazy">
@@ -653,20 +690,6 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
       </div>
     </div>
   </section>
-
-<section class="content-section"><div class="wrap prose"><div class="eyebrow">Planning your visit</div><h2>A safe, active and welcoming day.</h2><p>Our staff are First Aid trained, DBS-checked and trained in child-protection procedures. Children can try different sports, develop skills and confidence, make new friends and enjoy activities in a safe, supportive environment.</p><p>Places must be booked in advance and are subject to availability.</p><h3>Cancellations</h3><p>Refunds or credit are available for cancellations made at least 48 hours before the session. Refunds are not available for no-shows or late cancellations.</p></div></section>
-  <!-- BOOKING -->
-  <div class="wrap">
-    <div class="book-panel reveal">
-      <div>
-        <h3>Ready to book?</h3>
-        <p>Camp booking and payment is handled through our booking partner, ClassForKids. You'll be taken to their site to choose dates and pay securely.</p>
-      </div>
-      <div style="display:flex; flex-direction:column; align-items:flex-start; gap:12px; min-width:260px;">
-        <a href="https://getintosportltd.classforkids.io/" target="_blank" rel="noopener" class="cta-pill cta-solid-accent" style="width:100%;">Book Now on ClassForKids &rarr;</a>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- ============ LETTINGS ============ -->
@@ -676,7 +699,7 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
       <div class="strand-eyebrow">Facility lettings &middot; Valley Leadership Academy</div>
       <h2 class="strand-title"><span class="big">School facilities,</span><span class="big accent">open to the community.</span></h2>
       <p class="lede">Halls, pitches and classrooms, outside school hours.</p>
-      <div style="margin-top:34px;"><a href="#bookteq-widget" class="cta-pill" style="width:auto; display:inline-flex;">Book Now &rarr;</a></div>
+      <div style="margin-top:34px;"><a href="#facListLettings" data-section="facListLettings" class="cta-pill" style="width:auto; display:inline-flex;">Book Now &rarr;</a></div>
     </div>
     <div class="strand-img"><img src="assets/img/client-2026/3g-astroturf.jpg" alt="Valley Leadership Academy 3G astroturf available for community hire" loading="lazy"></div>
   </section>
@@ -694,7 +717,7 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
            https://help.bookteq.com/client-support-hub/installing-a-booking-calendar-widget-on-your-website
            Typical pattern is a container div plus an async loader script tag; the exact markup
            has to come from the client's own Bookteq account, not guessed here. -->
-      <div class="embed-slot" style="min-width:100%; padding:60px 34px;">Bookteq live calendar &mdash; embed pending Bookteq account confirmation</div>
+      <div class="embed-slot" style="min-width:100%; padding:60px 34px;">Online availability is coming soon. <a href="mailto:simongetintosport@gmail.com?subject=Facility%20availability">Email us to check availability</a>.</div>
     </div>
   </section>
 
@@ -718,11 +741,11 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
     </details>
 <details class="facility-card">
       <summary><span class="facility-number">05</span><span>Arts Theatre</span><span class="facility-plus" aria-hidden="true">+</span></summary>
-      <div class="facility-content facility-text-only"><div class="facility-info"><p>A spacious, versatile venue that can be configured to suit a wide range of events, performances and activities. With seating for several hundred people, it is ideal for theatre performances, presentations, community events, conferences and large group gatherings.</p><p class="facility-price">From £20 per hour</p><a class="cta-pill" href="mailto:simongetintosport@gmail.com?subject=Arts%20Theatre%20availability%20enquiry">Enquire about availability &rarr;</a></div></div>
+      <div class="facility-content"><img src="assets/img/client-2026/arts-theatre.png" alt="Arts Theatre at Valley Leadership Academy" loading="lazy"><div class="facility-info"><p>A spacious, versatile venue that can be configured to suit a wide range of events, performances and activities. With seating for several hundred people, it is ideal for theatre performances, presentations, community events, conferences and large group gatherings.</p><p class="facility-price">From £20 per hour</p><a class="cta-pill" href="mailto:simongetintosport@gmail.com?subject=Arts%20Theatre%20availability%20enquiry">Enquire about availability &rarr;</a></div></div>
     </details>
 <details class="facility-card">
       <summary><span class="facility-number">06</span><span>Classrooms</span><span class="facility-plus" aria-hidden="true">+</span></summary>
-      <div class="facility-content facility-text-only"><div class="facility-info"><p>Fully equipped classroom spaces with interactive whiteboards and seating for up to 30 people. Ideal for training sessions, workshops, meetings, tuition, community groups and educational activities, with a comfortable and practical environment for learning and collaboration.</p><p class="facility-price">From £15 per hour</p><a class="cta-pill" href="mailto:simongetintosport@gmail.com?subject=Classrooms%20availability%20enquiry">Enquire about availability &rarr;</a></div></div>
+      <div class="facility-content"><img src="assets/img/client-2026/classroom.png" alt="Classrooms at Valley Leadership Academy" loading="lazy"><div class="facility-info"><p>Fully equipped classroom spaces with interactive whiteboards and seating for up to 30 people. Ideal for training sessions, workshops, meetings, tuition, community groups and educational activities, with a comfortable and practical environment for learning and collaboration.</p><p class="facility-price">From £15 per hour</p><a class="cta-pill" href="mailto:simongetintosport@gmail.com?subject=Classrooms%20availability%20enquiry">Enquire about availability &rarr;</a></div></div>
     </details>
     </div>
   </div>
@@ -734,6 +757,7 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
         <div class="eyebrow">About Valley Leadership Academy</div>
         <h2>What to expect when you hire with us.</h2>
       </div>
+<div class="reception-gallery"><figure><img src="assets/img/client-2026/reception-desk.png" alt="Get Into Sport reception desk" loading="lazy"><figcaption>A welcoming reception</figcaption></figure><figure><img src="assets/img/client-2026/reception-seating.png" alt="Comfortable seating in the Get Into Sport reception area" loading="lazy"><figcaption>Space to relax before your session</figcaption></figure></div>
       <div class="reveal" style="max-width:640px;">
         <h3 style="margin-bottom:16px;">Facility Access, Parking &amp; Changing Facilities</h3>
         <p style="margin-bottom:24px;"><strong>Everything You Need, All in One Place</strong></p>
@@ -750,7 +774,7 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
   </section>
 
   <div class="image-break reveal">
-    <img src="assets/img/client-2026/trampoline-hall.jpg" alt="Trampoline hall at Valley Leadership Academy" loading="lazy">
+    <img src="assets/img/client-2026/trampoline-hall-5.jpg" alt="Trampoline hall at Valley Leadership Academy" loading="lazy">
     <span class="cap">Facilities for clubs, schools and community groups</span>
   </div>
 
@@ -767,15 +791,16 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
         <div class="carousel-item vp-trampoline" role="img" aria-label="Trampoline hall at Valley Leadership Academy"></div>
         <div class="carousel-item vp-sports" role="img" aria-label="Sports hall at Valley Leadership Academy"></div>
         <div class="carousel-item vp-3g" role="img" aria-label="3G astroturf at Valley Leadership Academy"></div>
-        <div class="carousel-item vp-sand" role="img" aria-label="Sand-based astroturf at Valley Leadership Academy"></div>
+        <div class="carousel-item vp-sand" role="img" aria-label="Sand-based astroturf at Valley Leadership Academy"></div><div class="carousel-item vp-theatre" role="img" aria-label="Arts Theatre at Valley Leadership Academy"></div><div class="carousel-item vp-classroom" role="img" aria-label="Classroom at Valley Leadership Academy"></div>
         <div class="carousel-item vp-trampoline" role="img" aria-label="Trampoline hall at Valley Leadership Academy"></div>
         <div class="carousel-item vp-sports" role="img" aria-label="Sports hall at Valley Leadership Academy"></div>
         <div class="carousel-item vp-3g" role="img" aria-label="3G astroturf at Valley Leadership Academy"></div>
-        <div class="carousel-item vp-sand" role="img" aria-label="Sand-based astroturf at Valley Leadership Academy"></div></div>
+        <div class="carousel-item vp-sand" role="img" aria-label="Sand-based astroturf at Valley Leadership Academy"></div><div class="carousel-item vp-theatre" role="img" aria-label="Arts Theatre at Valley Leadership Academy"></div><div class="carousel-item vp-classroom" role="img" aria-label="Classroom at Valley Leadership Academy"></div></div>
       </div>
     </div>
   </section>
 
+<section class="hire-benefits content-section"><div class="wrap"><h2>Why hire with Get Into Sport?</h2><div class="benefits-grid"><article><h3>Professionally managed</h3><p>Your booking is managed by a local team with extensive experience in education, sport and facility management.</p></article><article><h3>Flexible booking</h3><p>Regular block bookings or one-off sessions to suit your organisation.</p></article><article><h3>Quality facilities</h3><p>Access to school facilities outside normal school hours.</p></article><article><h3>Community focused</h3><p>Your booking helps keep local facilities active and accessible to the community.</p></article><article><h3>Simple process</h3><p>Clear pricing, straightforward enquiries and support from a local team.</p></article></div></div></section>
   <div class="wrap">
     <div class="book-panel reveal">
       <div><span class="badge-line">Online booking launching soon</span><h3>Enquire about hiring a facility</h3><p>Fill in the form — we'll reply directly for now.</p></div>
@@ -797,6 +822,7 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
       <span class="tag">Coming soon</span>
     </div>
   </div>
+<section class="lettings-faq content-section"><div class="wrap prose"><h2>Frequently asked questions</h2><details><summary>Can I make a regular weekly booking?</summary><p>Yes. We offer discounted block bookings as well as one-off hire.</p></details><details><summary>Can I hire facilities at weekends?</summary><p>Yes, our facilities are open from 9am to 5:30pm on Saturdays and Sundays.</p></details><details><summary>Do you provide equipment?</summary><p>We can loan out badminton racquets, shuttlecocks, table tennis bats and balls.</p></details><details><summary>Is parking available?</summary><p>Yes, we have plenty of parking spaces at both the front and back of the school.</p></details><details><summary>Are changing rooms available?</summary><p>Yes, we have two sets of male and female changing facilities, including showers.</p></details><details><summary>Can you turn up and pay at reception?</summary><p>If a facility does not already have a booking, you can turn up and pay upon arrival. <a href="#bookteq-widget" data-section="bookteq-widget">Check availability</a> before travelling.</p></details><details><summary>What happens if I need to cancel?</summary><p>Please <a href="mailto:simongetintosport@gmail.com?subject=Facility%20booking%20cancellation">contact us</a> at your earliest convenience.</p></details><details><summary>Can I view the facility before booking?</summary><p>Yes, please <a href="mailto:simongetintosport@gmail.com?subject=Facility%20viewing">email us to book a viewing</a>.</p></details><details><summary>Do I need my own insurance?</summary><p>As an organisation or club, we require you to have your own public liability insurance. If you are not an official club or organisation, our public liability insurance will cover you.</p></details><details><summary>Can I hire a classroom for a business or training session?</summary><p>Yes, absolutely. We would be happy to host training events outside school hours.</p></details></div></section>
 </div>
 
 <footer class="site">
@@ -844,7 +870,7 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
 <script>
 (function(){
   var dot = document.getElementById('cursorDot');
-  var hoverables = 'a, button, .fac-row, input, textarea';
+  var hoverables = 'a, button, summary, input, textarea';
   window.addEventListener('mousemove', function(e){
     dot.style.left = e.clientX + 'px';
     dot.style.top = e.clientY + 'px';
@@ -881,6 +907,22 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
     else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
   });
 
+  function updateCarouselSpeeds(){
+    document.querySelectorAll('.page.active .carousel-row').forEach(function(row){
+      var distance = (row.scrollWidth + 16) / 2;
+      if(distance > 0) row.style.animationDuration = (distance / 28) + 's';
+    });
+  }
+  window.addEventListener('resize', updateCarouselSpeeds);
+  updateCarouselSpeeds();
+  document.querySelectorAll('[data-section]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      var target = document.getElementById(link.dataset.section);
+      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
   var PAGE_TITLES = {
     home: 'Get Into Sport — Holiday Camps & Facility Lettings',
     camps: 'Holiday Camps, Ages 5–12 | Get Into Sport',
@@ -894,6 +936,7 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
     function activate(){
       document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); p.classList.remove('leaving'); });
       if(target) target.classList.add('active');
+      updateCarouselSpeeds();
       window.scrollTo({top:0, behavior:'instant'});
       revealCheck();
       if(PAGE_TITLES[name]) document.title = PAGE_TITLES[name];
@@ -1064,14 +1107,6 @@ h1,h2,h3,h4,.hero-title,.hero-title .l2,.strand-title,.strand-title .big,.spotli
 </script>
 
 
-<script>
-(function(){
-  var PX_PER_SEC = 28; // slow, constant drift — same visual speed on every carousel
-  document.querySelectorAll('.carousel-row').forEach(function(row){
-    var halfWidth = row.scrollWidth / 2;
-    row.style.animationDuration = (halfWidth / PX_PER_SEC) + 's';
-  });
-})();
-</script>
+
 </body>
 </html>
